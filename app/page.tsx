@@ -60,7 +60,7 @@ px-2 text-white"
           <div className="flex flex-col items-center justify-center mb-5">
             {" "}
             <ExclamationTriangleIcon className="h-8 w-8" />
-            <h2>Examples</h2>
+            <h2>Limits</h2>
           </div>
           <div className="space-y-2">
             <p className="infoText">"Explain Something to me"</p>
