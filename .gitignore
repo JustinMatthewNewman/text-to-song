@@ -1,0 +1,7 @@
+.vercel
+.env
+serviceAccountKey.json
+/node_modules
+.next
+.vscode
+.DS_Store
