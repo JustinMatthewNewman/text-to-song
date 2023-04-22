@@ -77,7 +77,7 @@ function ChatInput({ chatId }: Props) {
 
 
       const message: Message = {
-        text: "Write a song",
+        text: input,
         createdAt: serverTimestamp(),
         user: {
           _id: session?.user.uid!,
@@ -106,7 +106,7 @@ function ChatInput({ chatId }: Props) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          prompt: "write a song",
+          prompt: input,
           chatId,
           model,
           session,
