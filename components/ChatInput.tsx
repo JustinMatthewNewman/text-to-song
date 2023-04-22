@@ -14,8 +14,8 @@ type Props = {
   chatId: string;
 };
 
-interface Voice {
-  added_at?: number | null;
+type Voice = {
+  added_at: number | null;
   architecture: string;
   category: string;
   contributors: string[];
@@ -31,9 +31,9 @@ interface Voice {
   voicemodel_uuid: string;
   hifi_gan_vocoder: string;
   ml_model_id: number;
-  speaker_id?: number | null;
+  speaker_id: number | null; // Update this line
   language: string;
-}
+};
 
 
 
@@ -50,6 +50,11 @@ function ChatInput({ chatId }: Props) {
     fallbackData: "text-davinci-003",
   });
 
+  const findVoiceIndex = (voice: Voice) => {
+    return getVoices().findIndex((v) => v.voicemodel_uuid === voice.voicemodel_uuid);
+  };
+  
+
   const getVoices = () => {
     return voiceData.filter(voice => voice.category.toLowerCase() === "rappers");
   };
@@ -58,8 +63,6 @@ function ChatInput({ chatId }: Props) {
     const selectedIndex = parseInt(e.target.value);
     setSelectedArtist(getVoices()[selectedIndex]);
   };
-  
-  
   
 
   const generateResponse = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -71,13 +74,11 @@ function ChatInput({ chatId }: Props) {
       const input = prompt.trim();
       setPrompt("");
 
-      setIsLoading(false);
-
-      if (!selectedArtist) {
-        // Handle the case when selectedArtist is null (e.g., show an error message)
+      if (selectedArtist == null) {
         return;
       }
-      
+      setIsLoading(false);
+
 
       const message: Message = {
         text: `Write a song in the voice of ${selectedArtist.name} about ${input}.`,
@@ -116,7 +117,7 @@ function ChatInput({ chatId }: Props) {
         }),
       }).then(() => {
         // Tost Notification
-        toast.success("Lyrics Created!", {
+        toast.success("Lyrics!", {
           id: notification,
         });
 
@@ -127,7 +128,7 @@ function ChatInput({ chatId }: Props) {
     }
   };
 
-  console.log(selectedArtist)
+  // console.log(selectedArtist)
 
   return (
     <div className="bg-gray-700/50 text-gray-400 rounded-lg text-sm">
@@ -145,26 +146,28 @@ function ChatInput({ chatId }: Props) {
         <label htmlFor="rapper-select">Write a song in the voice of: </label>
       <div className="p-2">
         <div>
-        <select
-        style={{
-          backgroundColor: "#353942",
-          color: "#fff",
-          borderRadius: "4px",
-          padding: "4px",
-          width: "230px",
-        }}
-        value={selectedArtist ? selectedArtist.voicemodel_uuid : ""}
-        onChange={handleVoiceSelection}
-      >
-        <option value="" disabled>
-          Select
-        </option>
-        {getVoices().map((voice, index) => (
-          <option key={voice.voicemodel_uuid} value={index}>
-            {voice.display_name}
-          </option>
-        ))}
-      </select>
+<select
+  style={{
+    backgroundColor: "#353942",
+    color: "#fff",
+    borderRadius: "4px",
+    padding: "4px",
+    width: "230px",
+  }}
+  value={selectedArtist ? findVoiceIndex(selectedArtist) : ""}
+  onChange={handleVoiceSelection}
+>
+  <option value="" disabled>
+    Select
+  </option>
+  {getVoices().map((voice, index) => (
+    <option key={voice.voicemodel_uuid} value={index}>
+      {voice.display_name}
+    </option>
+  ))}
+</select>
+
+
         </div>
       </div>
       <br />
