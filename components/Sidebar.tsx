@@ -27,9 +27,9 @@ function Sidebar({}: Props) {
       <div className="flex-1">
         <div>
           <NewChat session={session} />
-          <div className="hidden sm:inline">
+          {/* <div className="hidden sm:inline">
             <ModelSelection />
-          </div>
+          </div> */}
           <div className="flex flex-col space-y-2 my-2">
             {loading && (
               <div className="animate-pulse text-center text-white">
@@ -51,11 +51,11 @@ function Sidebar({}: Props) {
       </div>
       {session && (
         <div className="border-t border-white py-4 space-y-4">
-          <div className="chatRow items-center justify-start bg-gray-700/50 gap-5">
+          <div className="chatRowNoHover items-center justify-start bg-gray-700/50 gap-5">
             <img
               src={session?.user?.image!}
               alt={session.user.name!}
-              className="h-6 w-6 rounded-full cursor-pointer hover:opacity-50"
+              className="h-6 w-6 rounded-full cursor-pointer"
             />
             <p>{session.user.name}</p>
           </div>
