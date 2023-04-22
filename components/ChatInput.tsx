@@ -75,7 +75,6 @@ function ChatInput({ chatId }: Props) {
       setPrompt("");
       setIsLoading(false);
 
-
       const message: Message = {
         text: input,
         createdAt: serverTimestamp(),
