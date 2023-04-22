@@ -69,19 +69,15 @@ function ChatInput({ chatId }: Props) {
     e.preventDefault();
 
     try {
-      if (!prompt && !session) return;
-
-      const input = prompt.trim();
+      console.log(selectedArtist)
+      if ((!prompt && !session)||(!selectedArtist)) return;
+      const input = "Write a song in the voice of " + selectedArtist.name + " rapping about " + prompt.trim() + ".";
       setPrompt("");
-
-      if (selectedArtist == null) {
-        return;
-      }
       setIsLoading(false);
 
 
       const message: Message = {
-        text: `Write a song in the voice of ${selectedArtist.name} about ${input}.`,
+        text: input,
         createdAt: serverTimestamp(),
         user: {
           _id: session?.user.uid!,
@@ -110,7 +106,7 @@ function ChatInput({ chatId }: Props) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          prompt: `Write a song in the voice of ${selectedArtist.name} about ${input}.`,
+          prompt: input,
           chatId,
           model,
           session,
