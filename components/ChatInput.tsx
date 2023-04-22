@@ -70,7 +70,7 @@ function ChatInput({ chatId }: Props) {
 
     try {
       console.log(selectedArtist)
-      if ((!prompt && !session)||(!selectedArtist)) return;
+      if (!prompt && !session) return;
       const input = prompt.trim();
       setPrompt("");
       setIsLoading(false);
