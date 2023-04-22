@@ -33,13 +33,13 @@ function Chat({ chatId }: Props) {
   }, [messages]);
 
   return (
-    <div className=" overflow-y-auto overflow-x-hidden">
+    <div className="flex-1 overflow-y-auto overflow-x-hidden">
       {messages?.empty && (
         <>
-          {/* <p className="mt-10 text-center text-white">
+          <p className="mt-10 text-center text-white">
             Type a prompt in below to get started
-          </p> */}
-          {/* <svg
+          </p>
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -52,16 +52,7 @@ function Chat({ chatId }: Props) {
               strokeLinejoin="round"
               d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
             />
-          </svg> */}
-
-
-
-
-
-
-
-
-          
+          </svg>
         </>
       )}
       {messages?.docs.map((message) => (
