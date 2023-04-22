@@ -10,37 +10,4 @@
   .chatRow {
     @apply rounded-lg px-5 py-3 text-sm flex items-center justify-center space-x-2 hover:bg-gray-700/70 cursor-pointer text-gray-300 transition-all duration-200 ease-out;
   }
-
-  .chatRowNoHover {
-    @apply rounded-lg px-5 py-3 text-sm flex items-center justify-center space-x-2 text-gray-300;
-  }
 }
-
-.button {
-  transition: background 2s ease-in-out, box-shadow 1s ease-in-out;
-}
-
-.button:hover {
-  animation: gradient-animation 2s infinite;
-  background-size: 300% 300%;
-  background-image: linear-gradient(135deg, #ff7d99, #b44dff, #ff9f4a);
-  box-shadow: 0 0 10px #ff7d99, 0 0 20px #b44dff, 0 0 30px #ff9f4a;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-
-
-
-
-
