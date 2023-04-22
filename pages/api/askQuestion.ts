@@ -36,7 +36,7 @@ export default async function handler(
       name: "ChatGPT",
       email: "ChatGPT",
       avatar:
-        "https://drive.google.com/uc?export=download&id=1ikaBBU-OsBSHkleHQmf15ww0vgX-A0Kz",
+        "https://drive.google.com/uc?export=download&id=1OrdAuQD_iWnqLUv1yerPwkvqvgHyw-al",
     },
   };
 
