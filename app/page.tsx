@@ -1,7 +1,7 @@
 "use client";
-import { SiMusicbrainz } from "react-icons/si";
-import { DiCode } from "react-icons/di";
-import { AiOutlineWarning } from "react-icons/ai";
+// import { SiMusicbrainz } from "react-icons/si";
+// import { DiCode } from "react-icons/di";
+// import { AiOutlineWarning } from "react-icons/ai";
 
 
 
@@ -30,7 +30,7 @@ px-2 text-white"
         <div>
           <div className="flex flex-col items-center justify-center mb-5">
             {" "}
-            <SiMusicbrainz className="h-8 w-8" />
+            {/* <SiMusicbrainz className="h-8 w-8" /> */}
             <h2>Examples</h2>
           </div>
           <div className="space-y-2">
@@ -45,7 +45,7 @@ px-2 text-white"
         <div>
           <div className="flex flex-col items-center justify-center mb-5">
             {" "}
-            <DiCode className="h-8 w-8" />
+            {/* <DiCode className="h-8 w-8" /> */}
             <h2>Capabilities</h2>
           </div>
           <div className="space-y-2">
@@ -60,7 +60,7 @@ px-2 text-white"
         <div>
           <div className="flex flex-col items-center justify-center mb-5">
             {" "}
-            <AiOutlineWarning className="h-8 w-8" />
+            {/* <AiOutlineWarning className="h-8 w-8" /> */}
             <h2>Limitations</h2>
           </div>
           <div className="space-y-2">
