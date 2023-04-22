@@ -51,7 +51,7 @@ function NewChat({ session }: Props) {
           clipRule="evenodd"
         />
       </svg>
-      <p>New Song</p>
+      <p>New Chat</p>
     </div>
   );
 }

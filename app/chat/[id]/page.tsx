@@ -19,8 +19,8 @@ function ChatPage({ params: { id } }: Props) {
       viewport={{ once: true }}
       className="flex flex-col h-screen overflow-hidden"
     >
-      <ChatInput chatId={id} />
       <Chat chatId={id} />
+      <ChatInput chatId={id} />
     </motion.div>
   );
 }
