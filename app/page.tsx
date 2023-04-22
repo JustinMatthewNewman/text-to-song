@@ -1,9 +1,10 @@
 "use client";
-import {
-  SunIcon,
-  BoltIcon,
-  ExclamationTriangleIcon,
-} from "@heroicons/react/24/outline";
+import { SiMusicbrainz } from "react-icons/si";
+import { DiCode } from "react-icons/di";
+import { AiOutlineWarning } from "react-icons/ai";
+
+
+
 
 import { motion } from "framer-motion";
 import React from "react";
@@ -29,45 +30,45 @@ px-2 text-white"
         <div>
           <div className="flex flex-col items-center justify-center mb-5">
             {" "}
-            <SunIcon className="h-8 w-8" />
+            <SiMusicbrainz className="h-8 w-8" />
             <h2>Examples</h2>
           </div>
           <div className="space-y-2">
-            <p className="infoText">"Explain Something to me"</p>
+            <p className="infoText">"Write a song in the voice of J. Cole about global warming."</p>
             <p className="infoText">
-              "What is the difference between a dog and a cat?"
+              "Write a song in the voice of 2Pac about being still alive."
             </p>
-            <p className="infoText">"What is the color of the sun?"</p>
+            <p className="infoText">"Write a song in the voice of Jay. Z about programming in JavaScript."</p>
           </div>
         </div>
 
         <div>
           <div className="flex flex-col items-center justify-center mb-5">
             {" "}
-            <BoltIcon className="h-8 w-8" />
+            <DiCode className="h-8 w-8" />
             <h2>Capabilities</h2>
           </div>
           <div className="space-y-2">
-            <p className="infoText">"Explain Something to me"</p>
+            <p className="infoText">Connects to the OpenAi API and to create Lyrics.</p>
             <p className="infoText">
-              "What is the difference between a dog and a cat?"
+              Converts the results into text-to-speech with Uberduck API.
             </p>
-            <p className="infoText">"What is the color of the sun?"</p>
+            <p className="infoText">Merges the results into a song.</p>
           </div>
         </div>
 
         <div>
           <div className="flex flex-col items-center justify-center mb-5">
             {" "}
-            <ExclamationTriangleIcon className="h-8 w-8" />
-            <h2>Limits</h2>
+            <AiOutlineWarning className="h-8 w-8" />
+            <h2>Limitations</h2>
           </div>
           <div className="space-y-2">
-            <p className="infoText">"Explain Something to me"</p>
+            <p className="infoText">Currently in early development.</p>
             <p className="infoText">
-              "What is the difference between a dog and a cat?"
+              Limits on the size of the song.
             </p>
-            <p className="infoText">"What is the color of the sun?"</p>{" "}
+            <p className="infoText">Only hip hop music available until next release.</p>{" "}
           </div>
       </div>
 

@@ -14,13 +14,37 @@ type Props = {
   chatId: string;
 };
 
+interface Voice {
+  added_at?: number | null;
+  architecture: string;
+  category: string;
+  contributors: string[];
+  controls: boolean;
+  display_name: string;
+  is_active: boolean;
+  model_id: string;
+  memberships: { name: string; id: number }[];
+  is_private: boolean;
+  is_primary: boolean;
+  name: string;
+  symbol_set: string;
+  voicemodel_uuid: string;
+  hifi_gan_vocoder: string;
+  ml_model_id: number;
+  speaker_id?: number | null;
+  language: string;
+}
+
+
+
+
 function ChatInput({ chatId }: Props) {
   const { data: session } = useSession();
   const [prompt, setPrompt] = useState("");
   const [loading, setIsLoading] = useState(true);
   const [voices, setVoices] = useState([]);
 
-  const [selectedArtist, setSelectedArtist] = useState(null);
+  const [selectedArtist, setSelectedArtist] = useState<Voice | null>(null);
 
   const { data: model } = useSWR("model", {
     fallbackData: "text-davinci-003",
@@ -35,6 +59,8 @@ function ChatInput({ chatId }: Props) {
     setSelectedArtist(getVoices()[selectedIndex]);
   };
   
+  
+  
 
   const generateResponse = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -46,6 +72,12 @@ function ChatInput({ chatId }: Props) {
       setPrompt("");
 
       setIsLoading(false);
+
+      if (!selectedArtist) {
+        // Handle the case when selectedArtist is null (e.g., show an error message)
+        return;
+      }
+      
 
       const message: Message = {
         text: `Write a song in the voice of ${selectedArtist.name} about ${input}.`,
@@ -121,14 +153,14 @@ function ChatInput({ chatId }: Props) {
           padding: "4px",
           width: "230px",
         }}
-        value={selectedArtist ? selectedArtist.voice_model_uuid : ""}
+        value={selectedArtist ? selectedArtist.voicemodel_uuid : ""}
         onChange={handleVoiceSelection}
       >
         <option value="" disabled>
           Select
         </option>
         {getVoices().map((voice, index) => (
-          <option key={voice.voice_model_uuid} value={index}>
+          <option key={voice.voicemodel_uuid} value={index}>
             {voice.display_name}
           </option>
         ))}
