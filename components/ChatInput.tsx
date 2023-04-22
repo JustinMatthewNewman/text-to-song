@@ -71,7 +71,7 @@ function ChatInput({ chatId }: Props) {
     try {
       console.log(selectedArtist)
       if ((!prompt && !session)||(!selectedArtist)) return;
-      const input = "Write a song in the voice of " + selectedArtist.name + " rapping about " + prompt.trim() + ".";
+      const input = prompt.trim();
       setPrompt("");
       setIsLoading(false);
 
