@@ -1,10 +1,9 @@
 "use client";
-import { SiMusicbrainz } from "react-icons/si";
-import { DiCode } from "react-icons/di";
-import { AiOutlineWarning } from "react-icons/ai";
-
-
-
+import {
+  SunIcon,
+  BoltIcon,
+  ExclamationTriangleIcon,
+} from "@heroicons/react/24/outline";
 
 import { motion } from "framer-motion";
 import React from "react";
@@ -24,51 +23,51 @@ export default function Home() {
       className="flex flex-col items-center justify-center h-screen
 px-2 text-white"
     >
-      <h1 className="text-5xl font-bold mb-20">SongGPT+</h1>
+      <h1 className="text-5xl font-bold mb-20">Rythmic</h1>
       <div className="flex space-x-2 text-center">
 
         <div>
           <div className="flex flex-col items-center justify-center mb-5">
             {" "}
-            <SiMusicbrainz className="h-8 w-8" />
+            <SunIcon className="h-8 w-8" />
             <h2>Examples</h2>
           </div>
           <div className="space-y-2">
-            <p className="infoText">"Write a song in the voice of J. Cole about global warming."</p>
+            <p className="infoText">"Explain Something to me"</p>
             <p className="infoText">
-              "Write a song in the voice of 2Pac about being still alive."
+              "What is the difference between a dog and a cat?"
             </p>
-            <p className="infoText">"Write a song in the voice of Jay. Z about programming in JavaScript."</p>
+            <p className="infoText">"What is the color of the sun?"</p>
           </div>
         </div>
 
         <div>
           <div className="flex flex-col items-center justify-center mb-5">
             {" "}
-            <DiCode className="h-8 w-8" />
+            <BoltIcon className="h-8 w-8" />
             <h2>Capabilities</h2>
           </div>
           <div className="space-y-2">
-            <p className="infoText">Connects to the OpenAi API and to create Lyrics.</p>
+            <p className="infoText">"Explain Something to me"</p>
             <p className="infoText">
-              Converts the results into text-to-speech with Uberduck API.
+              "What is the difference between a dog and a cat?"
             </p>
-            <p className="infoText">Merges the results into a song.</p>
+            <p className="infoText">"What is the color of the sun?"</p>
           </div>
         </div>
 
         <div>
           <div className="flex flex-col items-center justify-center mb-5">
             {" "}
-            <AiOutlineWarning className="h-8 w-8" />
-            <h2>Limitations</h2>
+            <ExclamationTriangleIcon className="h-8 w-8" />
+            <h2>Limits</h2>
           </div>
           <div className="space-y-2">
-            <p className="infoText">Currently in early development.</p>
+            <p className="infoText">"Explain Something to me"</p>
             <p className="infoText">
-              Limits on the size of the song.
+              "What is the difference between a dog and a cat?"
             </p>
-            <p className="infoText">Only hip hop music available until next release.</p>{" "}
+            <p className="infoText">"What is the color of the sun?"</p>{" "}
           </div>
       </div>
 
