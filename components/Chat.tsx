@@ -64,8 +64,9 @@ function Chat({ chatId }: Props) {
           
         </>
       )}
+     
       {messages?.docs.map((message) => (
-        <Message key={message.id} message={message.data()} />
+        <Message message={message.data()} /> // Use data() method to access message data
       ))}
       <div ref={messageEndRef} />
     </div>

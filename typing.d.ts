@@ -9,3 +9,8 @@ interface Message {
     avatar: string;
   };
 }
+
+interface MessageWithAudio extends Message {
+  audioUrl?: string;
+}
+

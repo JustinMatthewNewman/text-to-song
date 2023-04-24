@@ -1,7 +1,18 @@
 "use client";
 
 import { firestore } from "@/firebase/firebase";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  doc,
+  getDocs,
+  limit,
+  orderBy,
+  query,
+  updateDoc,
+  serverTimestamp
+} from "firebase/firestore";
+
 import { useSession } from "next-auth/react";
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
@@ -12,6 +23,7 @@ import ModelSelection from "./ModelSelection";
 
 type Props = {
   chatId: string;
+  
 };
 
 type Voice = {
@@ -53,6 +65,40 @@ function ChatInput({ chatId }: Props) {
   const findVoiceIndex = (voice: Voice) => {
     return getVoices().findIndex((v) => v.voicemodel_uuid === voice.voicemodel_uuid);
   };
+
+  const addAudioUrlToMessage = async (audioUrl: string) => {
+    const messagesSnapshot = await getDocs(
+      query(
+        collection(
+          firestore,
+          `users/${session?.user?.uid!}/chats/${chatId}/messages`
+        ),
+        orderBy("createdAt", "desc"),
+        limit(1)
+      )
+    );
+  
+    const lastMessage = messagesSnapshot.docs[0];
+    const messageId = lastMessage.id;
+    const messageData = lastMessage.data() as Message;
+
+    const updatedMessage: MessageWithAudio = {
+      ...messageData,
+      audioUrl: audioUrl,
+    };
+  
+
+  
+    await updateDoc(
+  doc(
+    firestore,
+    `users/${session?.user?.uid!}/chats/${chatId}/messages/${messageId}`
+  ),
+  { "audioUrl": updatedMessage.audioUrl }
+);
+
+  };
+  
   
 
   const getVoices = () => {
@@ -86,6 +132,7 @@ function ChatInput({ chatId }: Props) {
             session?.user.image ||
             `https://ui-avatars.com/api/?name=${session?.user.name!}`,
         },
+        
       };
 
       await addDoc(
@@ -109,15 +156,22 @@ function ChatInput({ chatId }: Props) {
           chatId,
           model,
           session,
+          selectedArtist: selectedArtist,
         }),
-      }).then(() => {
-        // Tost Notification
-        toast.success("Lyrics!", {
-          id: notification,
+      })
+        .then((response) => response.json())
+        .then(({ answer, audioUrl }) => {
+          // Tost Notification
+          toast.success("Lyrics!", {
+            id: notification,
+          });
+      
+          setIsLoading(true);
+      
+          // Pass the audioUrl to a function that adds it to the message
+          addAudioUrlToMessage(audioUrl);
         });
-
-        setIsLoading(true);
-      });
+      
     } catch (error: any) {
       console.log(error.message);
     }
