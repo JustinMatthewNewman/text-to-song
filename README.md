@@ -11,7 +11,7 @@ SongGPT with REACT! (Next.js 13, Firebase, Tailwind CSS, TypeScript, API endpoin
   
 <!-- Badges -->
 
-<a href="https:/text-to-song.vercel.app" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
+<a href="https://text-to-song.vercel.app" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
 ![](https://img.shields.io/badge/Maintained-Yes-indigo)
 ![](https://img.shields.io/github/forks/SashenJayathilaka/Rythm-.svg)
 ![](https://img.shields.io/github/stars/SashenJayathilaka/Rythm-.svg)
