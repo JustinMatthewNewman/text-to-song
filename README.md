@@ -13,10 +13,10 @@ SongGPT with REACT! (Next.js 13, Firebase, Tailwind CSS, TypeScript, API endpoin
 
 <a href="https://text-to-song.vercel.app" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
 ![](https://img.shields.io/badge/Maintained-Yes-indigo)
-![](https://img.shields.io/github/forks/SashenJayathilaka/Rythm-.svg)
+<!-- ![](https://img.shields.io/github/forks/SashenJayathilaka/Rythm-.svg)
 ![](https://img.shields.io/github/stars/SashenJayathilaka/Rythm-.svg)
 ![](https://img.shields.io/github/issues/SashenJayathilaka/Rythm-)
-![](https://img.shields.io/github/last-commit/SashenJayathilaka/Rythm-)
+![](https://img.shields.io/github/last-commit/SashenJayathilaka/Rythm-) -->
 
 <h4>
     <a href="https://text-to-song.vercel.app">View Demo</a>
