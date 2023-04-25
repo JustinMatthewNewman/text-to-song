@@ -226,7 +226,7 @@ Install dependencies
  the project
 
 ```bash
-  git  https://github.com/SashenJayathilaka/Rythm-.git
+  git  https://github.com/JustinMatthewNewman/text-to-song.git
 ```
 
 ```bash
