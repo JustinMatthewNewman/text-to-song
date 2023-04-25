@@ -55,7 +55,7 @@ SongGPT with REACT! (Next.js 13, Firebase, Tailwind CSS, TypeScript, API endpoin
 ### :camera: Screenshots
 
 <div align="center">
-<a href="https://text-to-song.vercel.app" target="_blank"><img  src='https://user-images.githubusercontent.com/99184393/222308829-d2d34db2-df30-4d60-b238-7299fd28b3f6.png' alt='image'/></a>
+<a href="https://text-to-song.vercel.app" target="_blank"><img  src='https://drive.google.com/uc?export=download&id=1b4hBr05HGNf35p8gAZn76heNB3YawvxC' alt='image'/></a>
 </div>
 
 ## <a href="https://text-to-song.vercel.app" target="_blank">LIVE DEMO 💥</a>
