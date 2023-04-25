@@ -60,7 +60,7 @@ function Sidebar({}: Props) {
             <p>{session.user.name}</p>
           </div>
           <div
-            className="chatRow items-center justify-start bg-gray-700/50 gap-5"
+            className=" chatRow items-center justify-start bg-gray-700/50 gap-5 logoutButton"
             onClick={() => signOut()}
           >
             <svg

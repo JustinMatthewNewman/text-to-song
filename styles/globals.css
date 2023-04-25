@@ -27,6 +27,17 @@
   box-shadow: 0 0 10px #ff7d99, 0 0 20px #b44dff, 0 0 30px #ff9f4a;
 }
 
+.logoutButton {
+  transition: background 2s ease-in-out, box-shadow 1s ease-in-out;
+}
+
+.logoutButton:hover {
+  animation: gradient-animation 2s infinite;
+  background-size: 300% 300%;
+  background-image: linear-gradient(135deg, #9b1d1d, #b44dff, #dc0c0c);
+  box-shadow: 0 0 10px #750019, 0 0 20px #a5025e, 0 0 30px #9d0000;
+}
+
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
