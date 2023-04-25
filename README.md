@@ -12,7 +12,7 @@ SongGPT with REACT! (Next.js 13, Firebase, Tailwind CSS, TypeScript, API endpoin
 <!-- Badges -->
 
 <a href="https://text-to-song.vercel.app" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
-![](https://img.shields.io/badge/Maintained-Yes-indigo)
+<a href="https://text-to-song.vercel.app" target="_blank">![](https://img.shields.io/badge/Maintained-Yes-indigo)</a>
 
 
 <!-- <h4>
@@ -52,14 +52,14 @@ SongGPT with REACT! (Next.js 13, Firebase, Tailwind CSS, TypeScript, API endpoin
 ### :camera: Screenshots
 
 <div align="center">
-<a href="https://text-to-song.vercel.app" target="_blank"><img  src='https://drive.google.com/uc?export=download&id=1b4hBr05HGNf35p8gAZn76heNB3YawvxC' alt='image'/></a>
+<a href="https://text-to-song.vercel.app" target="_blank"><img  src='https://raw.githubusercontent.com/JustinMatthewNewman/geoJson/main/song-gpt.png' alt='image'/></a>
 </div>
 
 ## <a href="https://text-to-song.vercel.app" target="_blank">LIVE DEMO 💥</a>
 
-![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
-![forthebadge](https://forthebadge.com/images/badges/for-you.svg)
-![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)
+<a href="https://text-to-song.vercel.app" target="_blank">![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)</a>
+<a href="https://text-to-song.vercel.app" target="_blank">![forthebadge](https://forthebadge.com/images/badges/for-you.svg)</a>
+<a href="https://text-to-song.vercel.app" target="_blank">![forthebadge](https://forthebadge.com/images/badges/powered-by-coffee.svg)</a>
 
 ### :space_invader: Tech Stack
 
