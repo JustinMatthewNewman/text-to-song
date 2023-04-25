@@ -1,17 +1,17 @@
 <div align="center">
 
-  <img src="https://user-images.githubusercontent.com/99184393/222309201-8fe96906-fc80-4c75-b141-d18b2686055e.png" alt="logo" width="205" height="auto" />
+  <img src="https://drive.google.com/uc?export=download&id=1fj7OO7X2uFYOI0zM5ZfjYB27vdI43qEr" alt="logo" width="205" height="auto" />
 
-  <h1>Rythm  with React.JS</h1>
+  <h1>SongGPT with React.JS</h1>
   
   <p>
-Rythm  with REACT! (Next.js 13, Firebase, Tailwind CSS, TypeScript, API endpoints in Next.js, Rythm models, Dynamic page routing in Next.js 13, App folder structure, NextAuth.js, Google Authentication).
+SongGPT with REACT! (Next.js 13, Firebase, Tailwind CSS, TypeScript, API endpoints in Next.js, Rythm models, Dynamic page routing in Next.js 13, App folder structure, NextAuth.js, Google Authentication).
   </p>
   
   
 <!-- Badges -->
 
-<a href="https://Rythm-s.vercel.app" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
+<a href="https:/text-to-song.vercel.app" target="_blank">![](https://img.shields.io/website-up-down-green-red/http/monip.org.svg)</a>
 ![](https://img.shields.io/badge/Maintained-Yes-indigo)
 ![](https://img.shields.io/github/forks/SashenJayathilaka/Rythm-.svg)
 ![](https://img.shields.io/github/stars/SashenJayathilaka/Rythm-.svg)
@@ -19,7 +19,7 @@ Rythm  with REACT! (Next.js 13, Firebase, Tailwind CSS, TypeScript, API endpoint
 ![](https://img.shields.io/github/last-commit/SashenJayathilaka/Rythm-)
 
 <h4>
-    <a href="https://Rythm-s.vercel.app">View Demo</a>
+    <a href="https://text-to-song.vercel.app">View Demo</a>
   <span> · </span>
     <a href="https://github.com/SashenJayathilaka/Rythm-/blob/master/README.md">Documentation</a>
   <span> · </span>
@@ -55,10 +55,10 @@ Rythm  with REACT! (Next.js 13, Firebase, Tailwind CSS, TypeScript, API endpoint
 ### :camera: Screenshots
 
 <div align="center">
-<a href="https://Rythm-s.vercel.app" target="_blank"><img  src='https://user-images.githubusercontent.com/99184393/222308829-d2d34db2-df30-4d60-b238-7299fd28b3f6.png' alt='image'/></a>
+<a href="https://text-to-song.vercel.app" target="_blank"><img  src='https://user-images.githubusercontent.com/99184393/222308829-d2d34db2-df30-4d60-b238-7299fd28b3f6.png' alt='image'/></a>
 </div>
 
-## <a href="https://Rythm-s.vercel.app" target="_blank">LIVE DEMO 💥</a>
+## <a href="https://text-to-song.vercel.app" target="_blank">LIVE DEMO 💥</a>
 
 ![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
 ![forthebadge](https://forthebadge.com/images/badges/for-you.svg)
@@ -118,6 +118,7 @@ Rythm  with REACT! (Next.js 13, Firebase, Tailwind CSS, TypeScript, API endpoint
 - Sign up for a Firebase account <a href='https://firebase.google.com'>HERE</a>
 - Install Node JS in your computer <a href='https://nodejs.org/en/'>HERE</a>
 - Get OpenAi Api key <a href='https://openai.com'>HERE</a>
+- Get uberduck Api key <a href='https://uberduck.ai/'>HERE</a>
 
 <!-- Env Variables -->
 
@@ -150,6 +151,7 @@ To run this project, you will need to add the following environment variables to
 `NEXT_PUBLIC_FIREBASE_MESSAGING_SET`
 
 `FIREBASE_SERVICE_ACCOUNT_KEY`
+
 
 
 ### :gear: Installation
@@ -276,9 +278,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## :handshake: Contact
 
-Your Name - [@twitter_handle](https://twitter.com/SashenHasinduJ) - sashenjayathilaka95@gmail.com
-
-Project Link: [https://github.com/SashenJayathilaka/Rythm-.git](https://github.com/SashenJayathilaka/Rythm-.git)
+Project Link: [https://github.com/JustinMatthewNewman/text-to-song.git](https://github.com/JustinMatthewNewman/text-to-song.git)
 
 <hr />
 
