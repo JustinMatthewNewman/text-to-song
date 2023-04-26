@@ -57,7 +57,7 @@ function Sidebar({}: Props) {
               alt={session.user.name!}
               className="h-6 w-6 rounded-full cursor-pointer"
             />
-            <p>{session.user.name}</p>
+            {/* <p>{session.user.name}</p> */}
           </div>
           <div
             className=" chatRow items-center justify-start bg-gray-700/50 gap-5 logoutButton"
