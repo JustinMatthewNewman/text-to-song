@@ -186,7 +186,7 @@ function ChatInput({ chatId }: Props) {
 
 
 
-<div className="mt-10 text-center text-white">
+<div className="mt-1 text-center text-white">
 <img
         src="https://drive.google.com/uc?export=download&id=1fj7OO7X2uFYOI0zM5ZfjYB27vdI43qEr"
         alt="logo"
