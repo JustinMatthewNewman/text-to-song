@@ -187,11 +187,12 @@ function ChatInput({ chatId }: Props) {
 
 
 <div className="mt-1 text-center text-white">
-<img
+{/* <img
         src="https://drive.google.com/uc?export=download&id=1fj7OO7X2uFYOI0zM5ZfjYB27vdI43qEr"
         alt="logo"
         className="mx-auto p-4 App-logo"
-      />
+      /> */}
+      <br/>
         <label htmlFor="rapper-select">Write a song in the voice of: </label>
       <div className="p-2">
         <div>
