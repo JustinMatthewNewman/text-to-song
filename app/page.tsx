@@ -12,21 +12,16 @@ import React from "react";
 
 
 export default function Home() {
-  return (
-    <motion.div
+ return (
+  <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="flex flex-col items-center justify-center h-screen px-2 text-white"
+      className="flex flex-col items-center h-screen px-2 text-white"
     >
-      
-    <div
-      className="flex flex-col items-center justify-center h-screen
-px-2 text-white"
-    >
-      <h1 className="text-5xl font-bold mb-20">SongGPT+</h1>
-      <div className="flex space-x-2 text-center">
-
+      <div className="flex flex-col items-center pt-8 md:pt-16 h-screen px-2 text-white">
+        <h1 className="text-5xl font-bold mb-20 md:mb-28">SongGPT</h1>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
         <div>
           <div className="flex flex-col items-center justify-center mb-5">
             {" "}
@@ -70,14 +65,10 @@ px-2 text-white"
             </p>
             <p className="infoText">Only hip hop music available until next release.</p>{" "}
           </div>
+        </div>
       </div>
-
-      </div>
-
-
-
-
     </div>
-    </motion.div>
-  );
+  </motion.div>
+);
+
 }

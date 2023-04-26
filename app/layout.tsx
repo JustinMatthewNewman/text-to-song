@@ -26,7 +26,7 @@ export default async function RootLayout({
                 <Sidebar />
               </div>
               <ClientProvider />
-              <div className="bg-[#343541] flex-1">{children}</div>
+              <div className="bg-[#343541] flex-1 overflow-y-auto">{children}</div>
             </div>
           )}
         </SessionProvider>

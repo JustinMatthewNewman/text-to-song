@@ -27,6 +27,32 @@
   box-shadow: 0 0 10px #ff7d99, 0 0 20px #b44dff, 0 0 30px #ff9f4a;
 }
 
+
+.SignInButton {
+  transition: background 2s ease-in-out, box-shadow 1s ease-in-out;
+  animation: gradient-animation 2s infinite;
+  background-size: 300% 300%;
+  background-image: linear-gradient(135deg, #ff7d99, #b44dff, #ff9f4a);
+  box-shadow: 0 0 10px #ff7d99, 0 0 20px #b44dff, 0 0 30px #ff9f4a;
+  padding: 2rem;
+  border-radius: 18px;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+.SignInButton:hover {
+  animation: gradient-animation 2s infinite;
+  background-size: 300% 300%;
+  background-image: linear-gradient(135deg, #14bf3f, #2983ba, #319525);
+  box-shadow: 0 0 10px #7dffad, 0 0 20px #4d74ff, 0 0 30px #4adeff;
+  padding: 2rem;
+  border-radius: 18px;
+  font-weight: bold;
+  font-size: 3em;
+}
+
+
+
 .logoutButton {
   transition: background 2s ease-in-out, box-shadow 1s ease-in-out;
 }
@@ -51,6 +77,11 @@
 }
 
 
+.scrollable-container {
+  max-height: 100vh;
+  overflow-y: auto;
+  padding-top: 1rem;
+}
 
 
 
