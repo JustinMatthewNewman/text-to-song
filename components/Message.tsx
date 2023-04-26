@@ -75,7 +75,6 @@ function Message({ message }: Props) {
                 </div>
               </div>
             )}
-            </div>
           </div>
 
         </div>
