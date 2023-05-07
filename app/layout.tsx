@@ -26,7 +26,7 @@ export default async function RootLayout({
                 <Sidebar />
               </div>
               <ClientProvider />
-              <div className="flex-1 overflow-y-auto" style={{ background: 'linear-gradient(225deg, rgba(65,88,208,1) 0%, rgba(200,80,192,1) 51%, rgba(255,204,112,1) 51%, rgba(255,112,217,1) 51%, rgba(255,204,112,1) 100%)' }}>{children}</div>
+              <div className="flex-1 overflow-y" style={{ background: 'linear-gradient(225deg, rgba(65,88,208,1) 0%, rgba(200,80,192,1) 51%, rgba(255,204,112,1) 51%, rgba(255,112,217,1) 51%, rgba(255,204,112,1) 100%)' }}>{children}</div>
             </div>
           )}
         </SessionProvider>
