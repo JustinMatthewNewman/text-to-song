@@ -102,8 +102,17 @@ function ChatInput({ chatId }: Props) {
   
 
   const getVoices = () => {
-    return voiceData.filter(voice => voice.category.toLowerCase() === "rappers");
+    return voiceData.filter(voice => {
+      const displayName = voice.display_name.toLowerCase();
+      return (displayName === 'jay-z' 
+      || displayName === 'snoop dogg' 
+      || displayName === 'j. cole'
+      || displayName === 'nicki minaj'
+      || displayName === '2pac'
+      || displayName === 'the notorious b.i.g.');
+    });
   };
+  
 
   const handleVoiceSelection = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedIndex = parseInt(e.target.value);
