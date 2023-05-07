@@ -19,7 +19,7 @@ export default function Home() {
       viewport={{ once: true }}
       className="flex flex-col items-center h-screen px-2 text-white"
     >
-      <div className="flex flex-col items-center pt-8 md:pt-16 h-screen px-2 text-white">
+      <div className="flex flex-col items-center pt-8 md:pt-16 h-screen px-2 text-white overflow-x-auto">
         <h1 className="text-3xl font-bold mb-20 md:mb-28">MelodifyLabs</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
