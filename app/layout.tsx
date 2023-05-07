@@ -22,11 +22,11 @@ export default async function RootLayout({
             <Login />
           ) : (
             <div className="flex">
-              <div className="bg-[#202123] max-w-xs h-screen overflow-y-auto md:min-w-[20rem]">
+              <div style={{ background: 'linear-gradient(45deg, #FFB6C1, #FFDAB9)' }} className=" max-w-xs h-screen overflow-y-auto md:min-w-[20rem]">
                 <Sidebar />
               </div>
               <ClientProvider />
-              <div className="bg-[#343541] flex-1 overflow-y-auto">{children}</div>
+              <div className="flex-1 overflow-y-auto" style={{ background: 'linear-gradient(45deg, #FFB6C1, #FFDAB9)' }}>{children}</div>
             </div>
           )}
         </SessionProvider>
