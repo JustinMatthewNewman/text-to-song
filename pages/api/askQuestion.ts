@@ -45,18 +45,21 @@ async function sendTextToUberduck(text: string, selectedArtist: any) {
       accept: "application/json",
       "content-type": "application/json",
       authorization:
-        "Basic cHViX2ZxandmcHlhbWlsa2NnbXV0Zzpwa19mYWYyZjNhZC04ZDBjLTRjNTktYjQyNi1jNWQ2ZGE4ODAwYmY=",
+        "Basic cHViX3J3c2Rva3R5bnJ3YXFvbHB1ejpwa19kZjJlYWUyNy0wNWFmLTQ2NDktOTQwNi05MTZlZDA3ZjhiODc=",
     },
     body: JSON.stringify({
       voice: "lj",
       pace: 1,
       voicemodel_uuid: selectedArtist.voicemodel_uuid,
-      speech: removeSongStructureLabels(text),
+      speech: removeSongStructureLabels(text).slice(0, 999),
     }),
   };
 
+  
   const response = await fetch("https://api.uberduck.ai/speak", requestOptions);
+  console.log(response);
   const data = await response.json();
+  console.log(data);
   const uuid = data.uuid;
 
   let status = null;
@@ -67,6 +70,7 @@ async function sendTextToUberduck(text: string, selectedArtist: any) {
       { headers: { accept: "application/json" } }
     );
     const statusData = await statusResponse.json();
+    console.log(statusData);
     status = statusData;
   }
 
