@@ -13,7 +13,7 @@ function Login({}: Props) {
         onClick={() => signIn("google")}
         className="text-white font-bold text-3xl animate-pulse SignInButton"
       >
-        SongGPT
+        MelodifyLabs
       </button>
     </div>
   );
