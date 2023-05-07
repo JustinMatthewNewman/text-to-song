@@ -180,7 +180,7 @@ function ChatInput({ chatId }: Props) {
   // console.log(selectedArtist)
 
   return (
-    <div className="bg-gray-700/50 text-gray-400 rounded-lg text-sm">
+    <div className="bg-gray-700/30 text-gray-400 text-sm">
 
 
 

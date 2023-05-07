@@ -43,7 +43,7 @@ function Message({ message }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className={`py-5 text-white ${isChatGPT && "bg-[#434654]"} w-full`}
+      className={`py-5 text-white ${isChatGPT} w-full bg-gray-700/50`}
     >
       <div className="flex space-x-5 px-4 md:px-10 max-w-2xl mx-auto">
         <img src={message.user.avatar} alt="" className="h-8 w-8" />

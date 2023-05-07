@@ -45,11 +45,11 @@ function ChatRow({ id, session }: Props) {
       href={`/chat/${id}`}
       className={`chatRow justify-center ${active && "bg-gray-700/50"} button`}
     >
-            <BsFillMusicPlayerFill className="h-8 w-8" />
+            <BsFillMusicPlayerFill className="h-8 w-8 text-gray-700" />
 
 
-      <p className="flex-1 hidden md:inline-flex truncate">
-        {messages?.docs[messages?.docs.length - 1]?.data().text || "New iPod"}
+            <p className="flex-1 hidden md:inline-flex truncate text-gray-700">
+                      {messages?.docs[messages?.docs.length - 1]?.data().text || "New iPod"}
       </p>
       <svg
         xmlns="http://www.w3.org/2000/svg"

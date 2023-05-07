@@ -38,7 +38,7 @@ function NewChat({ session }: Props) {
   };
 
   return (
-    <div className="button chatRow border-gray-700 border" onClick={createNewChat}>
+    <div className="button chatRow border-gray-700 text-gray-700" onClick={createNewChat}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

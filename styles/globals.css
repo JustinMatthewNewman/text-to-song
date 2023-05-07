@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.grad {
+  height: 100%;
+margin: 0;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 300% 300%;
+background-image: linear-gradient(135deg, #b43ecc, #4d91ff, #4aff95);
+}
+
 @layer components {
   .infoText {
     @apply p-4 bg-gray-700/50 rounded-lg max-w-[300px];
@@ -75,6 +85,8 @@
     background-position: 0% 50%;
   }
 }
+
+
 
 
 .scrollable-container {
@@ -166,4 +178,9 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+
+
+
+
+
 
