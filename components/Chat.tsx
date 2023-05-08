@@ -65,9 +65,10 @@ function Chat({ chatId }: Props) {
         </>
       )}
      
-      {messages?.docs.map((message) => (
-        <Message message={message.data()} /> // Use data() method to access message data
-      ))}
+     {messages?.docs.map((message, index) => (
+  <Message key={index} message={message.data()} /> // Use data() method to access message data
+))}
+
       <div ref={messageEndRef} />
     </div>
   );

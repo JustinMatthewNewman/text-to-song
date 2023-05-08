@@ -184,3 +184,44 @@ background-image: linear-gradient(135deg, #b43ecc, #4d91ff, #4aff95);
 
 
 
+
+
+  .progressBar {
+    /* Customize the appearance of the progress bar */
+    height: 10px;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  .progressBar::-webkit-progress-bar {
+    background-color: transparent;
+  }
+  
+  .progressBar::-webkit-progress-value {
+    /* Create a light pink linear gradient */
+    background-image: linear-gradient(
+      90deg,
+      #ff9aa2,
+      #ffb7b2,
+      #ff9aa2
+    );
+  
+    /* Add a glowing effect */
+    box-shadow: 0 0 10px #ff9aa2, 0 0 20px #ff9aa2;
+  }
+  
+  .progressBar::-moz-progress-bar {
+    /* Create a light pink linear gradient */
+    background-image: linear-gradient(
+      90deg,
+      #ff9aa2,
+      #ffb7b2,
+      #ff9aa2
+    );
+  
+    /* Add a glowing effect */
+    box-shadow: 0 0 10px #ff9aa2, 0 0 20px #ff9aa2;
+  }
+  

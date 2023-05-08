@@ -7,8 +7,7 @@ type Props = {};
 
 function Login({}: Props) {
   return (
-    <div className="bg-[#333333] h-screen flex flex-col items-center justify-center text-center">
-
+<div className="bg-gradient-custom min-h-screen flex flex-col items-center justify-center text-center">
       <button
         onClick={() => signIn("google")}
         className="text-white font-bold text-3xl animate-pulse SignInButton"
