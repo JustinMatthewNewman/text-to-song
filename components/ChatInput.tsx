@@ -153,7 +153,7 @@ function ChatInput({ chatId }: Props) {
       );
 
       // loading
-      const notification = toast.loading("Processing...");
+      const notification = toast.loading("Generating lyrics...");
 
       await fetch("/api/askQuestion", {
         method: "POST",
