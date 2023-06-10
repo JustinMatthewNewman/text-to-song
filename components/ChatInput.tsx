@@ -104,14 +104,12 @@ function ChatInput({ chatId }: Props) {
   const getVoices = () => {
     return voiceData.filter(voice => {
       const displayName = voice.display_name.toLowerCase();
-      return (
-      //displayName === 'jay-z' 
-      // || displayName === 'snoop dogg' 
-      // || displayName === 'j. cole'
-      displayName === 'nicki minaj'
-      // || displayName === '2pac'
-      // || displayName === 'the notorious b.i.g.'
-      );
+      return (displayName === 'jay-z' 
+      || displayName === 'snoop dogg' 
+      || displayName === 'j. cole'
+      || displayName === 'nicki minaj'
+      || displayName === '2pac'
+      || displayName === 'the notorious b.i.g.');
     });
   };
   
