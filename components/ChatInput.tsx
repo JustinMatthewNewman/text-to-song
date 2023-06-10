@@ -102,15 +102,26 @@ function ChatInput({ chatId }: Props) {
   
 
   const getVoices = () => {
-    return voiceData.filter(voice => {
-      const displayName = voice.display_name.toLowerCase();
-      return (displayName === 'jay-z' 
-      || displayName === 'snoop dogg' 
-      || displayName === 'j. cole'
-      || displayName === 'nicki minaj'
-      || displayName === '2pac'
-      || displayName === 'the notorious b.i.g.');
-    });
+    // return voiceData.filter(voice => {
+    //   const displayName = voice.display_name.toLowerCase();
+    //   return (displayName === 'jay-z' 
+    //   || displayName === 'snoop dogg' 
+    //   || displayName === 'j. cole'
+    //   || displayName === 'nicki minaj (rapping)'
+    //   || displayName === '2pac'
+    //   || displayName === 'the notorious b.i.g.'
+    //   || displayName === 'the notorious b.i.g.'
+    //   || displayName === 'the notorious b.i.g.'
+    //   || displayName === 'the notorious b.i.g.'
+    //   || displayName === 'the notorious b.i.g.'
+    //   || displayName === 'the notorious b.i.g.'
+    //   || displayName === 'Saul Goodman'
+    //   || displayName === 'lady gaga (singing)'
+      
+      
+    //   );
+    // });
+    return voiceData;
   };
   
 
