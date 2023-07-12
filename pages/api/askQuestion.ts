@@ -48,9 +48,8 @@ async function sendTextToUberduck(text: string, selectedArtist: any) {
         "Basic cHViX3J3c2Rva3R5bnJ3YXFvbHB1ejpwa19kZjJlYWUyNy0wNWFmLTQ2NDktOTQwNi05MTZlZDA3ZjhiODc=",
     },
     body: JSON.stringify({
-      voice: "lj",
       pace: 1,
-      voicemodel_uuid: selectedArtist.voicemodel_uuid,
+      voice: selectedArtist.name,
       speech: removeSongStructureLabels(text).slice(0, 999),
     }),
   };
