@@ -9,8 +9,6 @@ import { AiOutlineWarning } from "react-icons/ai";
 import { motion } from "framer-motion";
 import React from "react";
 
-
-
 export default function Home() {
  return (
   <motion.div
@@ -21,52 +19,39 @@ export default function Home() {
     >
       <div className="flex flex-col items-center pt-8 md:pt-16 h-screen px-2 text-white overflow-x-auto">
         <h1 className="text-3xl font-bold mb-20 md:mb-28">MelodifyLabs</h1>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-        <div>
-          <div className="flex flex-col items-center justify-center mb-5">
-            {" "}
-            <SiMusicbrainz className="h-8 w-8" />
-            <h2>Examples</h2>
-          </div>
-          <div className="space-y-2">
-            <p className="infoText">"Write a song in the voice of J. Cole about global warming."</p>
-            <p className="infoText">
-              "Write a song in the voice of 2Pac about being still alive."
-            </p>
-            <p className="infoText">"Write a song in the voice of Jay. Z about programming in JavaScript."</p>
-          </div>
-        </div>
 
-        <div>
-          <div className="flex flex-col items-center justify-center mb-5">
-            {" "}
-            <DiCode className="h-8 w-8" />
-            <h2>Capabilities</h2>
-          </div>
-          <div className="space-y-2">
-            <p className="infoText">Connects to the OpenAi API and to create Lyrics.</p>
-            <p className="infoText">
-              Converts the results into text-to-speech with Uberduck API.
-            </p>
-            <p className="infoText">Merges the results into a song.</p>
-          </div>
+        <div className="rounded-lg bg-gray-800 bg-opacity-70 p-6 text-center mb-10">
+          <p className="text-md">
+            Welcome to one of the world's first text to song based platforms!
+          </p>
         </div>
+        <div className="rounded-lg bg-gray-800 bg-opacity-70 p-6 text-center mb-10">
+        <p className="text-md">
+          Melodify is a text-to-song web application that utilizes your input prompt to query the OpenAI API for lyrics. 
+        </p>
+      </div>
 
-        <div>
-          <div className="flex flex-col items-center justify-center mb-5">
-            {" "}
-            <AiOutlineWarning className="h-8 w-8" />
-            <h2>Limitations</h2>
-          </div>
-          <div className="space-y-2">
-            <p className="infoText">Currently in early development.</p>
-            <p className="infoText">
-              Limits on the size of the song.
-            </p>
-            <p className="infoText">Only hip hop music available until next release.</p>{" "}
-          </div>
-        </div>
+
+      <div className="rounded-lg bg-gray-800 bg-opacity-70 p-6 text-center mb-10">
+        <p className="text-md">
+          The obtained lyrics are then passed to our text-to-speech API to generate vocals, which are merged with an existing background audio track to create a song. 
+        </p>
+      </div>
+      <div className="rounded-lg bg-gray-800 bg-opacity-70 p-6 text-center mb-10">
+        <p className="text-md">
+        The process usually takes around 30 seconds to 1.5 minutes. Please be patient and enjoy. 
+        </p>
+      </div>
+      <div className="rounded-lg bg-gray-800 bg-opacity-70 p-6 text-center mb-10">
+        <p className="text-md">
+        Once the play button appears, you can refresh the page to select a new backing track.
+        </p>
+      </div>
+
+      <div className="rounded-lg bg-gray-800 bg-opacity-70 p-6 text-center mb-10">
+        <p className="text-md">
+          To get started press new iPod.
+        </p>
       </div>
     </div>
   </motion.div>
