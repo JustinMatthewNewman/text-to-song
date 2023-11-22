@@ -184,26 +184,20 @@ function ChatInput({ chatId }: Props) {
 
   return (
     <div
-      style={{
-        position: "fixed",
-        left: "50%",
-        top: "120px",
-        transform: "translate(-50%, -50%)",
-        overflowY: "hidden",
-      }}
-      className="mt-24 text-gray-400 text-sm"
+
+      className="mt-2 text-gray-400 text-sm"
     >
         {loadingVoices ? (
           <p>Loading Voices</p>
         ) : (
-          <div className="flex flex-col items-center justify-center min-w-md">
+          <div className="flex flex-col items-center justify-center text-center">
             <div className="p-2">
               <Select
                 items={voices}
                 label="Song voice:"
                 placeholder="Select a voice"
                 style={{ fontSize: "18px" }}
-                className="w-[80vw] md:w-[40vw] lg:w-[20vw]"
+                className="w-[80vw] md:w-[40vw]"
                 selectionMode="single"
                 onChange={(voice) => handleVoiceSelection(voice.target.value)}
               >
@@ -221,7 +215,7 @@ function ChatInput({ chatId }: Props) {
             <Textarea
               style={{ fontSize: "18px" }}
               label="Song about:"
-              className="w-[80vw] md:w-[40vw] lg:w-[20vw]"
+              className="w-[80vw] md:w-[40vw]"
               type="text"
               placeholder="Type here..."
               onChange={(e) => setPrompt(e.target.value)}

@@ -32,7 +32,7 @@ function Chat({ chatId }: Props) {
   }, [messages]);
 
   return (
-    <div className="overflow-y-auto overflow-x-hidden h-screen" style={{ marginTop: '50vh', height: '50%' }}>
+    <div className="overflow-y-auto overflow-x-hidden h-screen">
       {messages?.empty && <></>}
       {messages?.docs.map((message, index) => (
         <Message key={index} message={message.data()} />
