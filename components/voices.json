@@ -1,13 +1,12 @@
 [
   {
-    "added_at": 1681318508,
+    "added_at": 1681318508.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [],
     "controls": false,
     "display_name": "Zeus",
     "is_active": true,
-    "model_id": "56f0aaa3-6482-474c-9943-ae32116bb8d0",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -17,10 +16,17 @@
     "hifi_gan_vocoder": "g_02590000_8spk",
     "ml_model_id": 13123,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Happy",
+    "style": "Character",
+    "accent": "USA",
+    "age": "Adult",
+    "description": "",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/92022a27-75fb-4e15-90ca-95095a82f5ee/images/zeus.webp"
   },
   {
-    "added_at": 1679106725,
+    "added_at": 1679106725.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -29,7 +35,6 @@
     "controls": false,
     "display_name": "Rose (Urgent)",
     "is_active": true,
-    "model_id": "72abca7b-514d-48f6-9a5d-95f886c2e97d",
     "memberships": [
       {
         "name": "creator",
@@ -44,10 +49,17 @@
     "hifi_gan_vocoder": "roseu-3-17-23-hifigan",
     "ml_model_id": 12656,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Female",
+    "mood": "Scared",
+    "style": "Character",
+    "accent": "British",
+    "age": "Adult",
+    "description": "A sense of whispered urgency",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/c4b48524-c8be-4ad5-ac1a-b4c3c74ae5b5/images/rose_png.webp"
   },
   {
-    "added_at": 1679028121,
+    "added_at": 1679028121.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -56,7 +68,6 @@
     "controls": false,
     "display_name": "Angus",
     "is_active": true,
-    "model_id": "89944a42-6581-4bae-8056-28b799f95b0d",
     "memberships": [
       {
         "name": "creator",
@@ -71,10 +82,17 @@
     "hifi_gan_vocoder": "angus-3-16-23-hifigan",
     "ml_model_id": 12638,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Happy",
+    "style": "Character",
+    "accent": "Scottish",
+    "age": "Adult",
+    "description": "An upbeat, jovial, friendly Scottish character voice.",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/7d29a280-8a3e-4c4b-9df4-cbe77e8f4a63/images/Angus_png.webp"
   },
   {
-    "added_at": 1678993821,
+    "added_at": 1678993821.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -83,7 +101,6 @@
     "controls": false,
     "display_name": "Awkward Male Teen",
     "is_active": true,
-    "model_id": "a4fa54a6-83ad-465e-846b-d7b8c2517b33",
     "memberships": [
       {
         "name": "creator",
@@ -98,10 +115,17 @@
     "hifi_gan_vocoder": "loser-3-16-23-hifigan",
     "ml_model_id": 12619,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Happy",
+    "style": "Character",
+    "accent": "USA",
+    "age": "Youth",
+    "description": "",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/f242dad3-6762-4267-985d-00c088b80e92/images/Awkward_MT_png.webp"
   },
   {
-    "added_at": 1678912313,
+    "added_at": 1678912313.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -110,7 +134,6 @@
     "controls": false,
     "display_name": "Choice Bru",
     "is_active": true,
-    "model_id": "35bd604f-af4c-41da-a86e-b1ad9eb1100f",
     "memberships": [
       {
         "name": "creator",
@@ -125,10 +148,17 @@
     "hifi_gan_vocoder": "kiwi-3-15-23-hifigan",
     "ml_model_id": 12606,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Happy",
+    "style": "Character",
+    "accent": "New Zealand",
+    "age": "Youth",
+    "description": "Fush and chups?",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/7a715c37-3edd-4696-9828-ee48ba76b52b/images/Choice_Bru_png.webp"
   },
   {
-    "added_at": 1678741126,
+    "added_at": 1678741126.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -137,7 +167,6 @@
     "controls": false,
     "display_name": "Angus (Pleading)",
     "is_active": true,
-    "model_id": "c5b4a3ac-7f36-4f6d-9842-ada5c1e2d19e",
     "memberships": [
       {
         "name": "creator",
@@ -152,10 +181,17 @@
     "hifi_gan_vocoder": "angus-3-13-23-hifigan",
     "ml_model_id": 12580,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Angry",
+    "style": "Character",
+    "accent": "Scottish",
+    "age": "Adult",
+    "description": "Mild comedic frustration",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/7d29a280-8a3e-4c4b-9df4-cbe77e8f4a63/images/Angus_png.webp"
   },
   {
-    "added_at": 1678328650,
+    "added_at": 1678328650.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -164,7 +200,6 @@
     "controls": false,
     "display_name": "Rose (Dreamy)",
     "is_active": true,
-    "model_id": "1b8d1261-9245-4392-b91e-9c20a366bc80",
     "memberships": [
       {
         "name": "creator",
@@ -179,10 +214,17 @@
     "hifi_gan_vocoder": "rose-3-9-23-hifigan",
     "ml_model_id": 12505,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Female",
+    "mood": "Happy",
+    "style": "Character",
+    "accent": "British",
+    "age": "Adult",
+    "description": "",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/563c30aa-70c4-4dbc-8c3c-fe7fb2700ee3/images/rose_png.webp"
   },
   {
-    "added_at": 1677926428,
+    "added_at": 1677926428.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -191,7 +233,6 @@
     "controls": false,
     "display_name": "Davo",
     "is_active": true,
-    "model_id": "fb2c2cf1-0e76-4f21-a1df-f0f03fb4a41e",
     "memberships": [
       {
         "name": "creator",
@@ -206,10 +247,17 @@
     "hifi_gan_vocoder": "andrew-3-4-23-hifigan",
     "ml_model_id": 12416,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Happy",
+    "style": "Character",
+    "accent": "Australian",
+    "age": "Adult",
+    "description": "She'll be right, mate",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/6dfa8240-c2c7-42d1-9880-e0ac92d150c7/images/Davo_png.webp"
   },
   {
-    "added_at": 1677492180,
+    "added_at": 1677492180.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -218,7 +266,6 @@
     "controls": false,
     "display_name": "Damon Edwards",
     "is_active": true,
-    "model_id": "8eb5f2d6-e561-4435-9f64-f80e8c86a9fd",
     "memberships": [
       {
         "name": "creator",
@@ -233,10 +280,17 @@
     "hifi_gan_vocoder": "trailer-2-27-23-hifigan",
     "ml_model_id": 12374,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Neutral",
+    "style": "Character",
+    "accent": "USA",
+    "age": "Adult",
+    "description": "Deep and dramatic",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/df71a60f-1294-4cf1-bd5d-a7e6d7350178/images/Damon_Edwards_png.webp"
   },
   {
-    "added_at": 1676101028,
+    "added_at": 1676101028.0,
     "architecture": "tacotron2",
     "category": "Uberduck AI Creators",
     "contributors": [
@@ -245,7 +299,6 @@
     "controls": false,
     "display_name": "WRL",
     "is_active": true,
-    "model_id": "03aa0153-2354-45cd-8858-e98880c30d00",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -255,10 +308,17 @@
     "hifi_gan_vocoder": "william-2-11-23-hifigan",
     "ml_model_id": 12190,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Neutral",
+    "style": "Speaker",
+    "accent": "USA",
+    "age": "Adult",
+    "description": "",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/30b67b62-51a8-43db-a1b4-edafd5b4cfea/images/wrl.webp"
   },
   {
-    "added_at": 1676026009,
+    "added_at": 1676026009.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -267,7 +327,6 @@
     "controls": false,
     "display_name": "Bertie",
     "is_active": true,
-    "model_id": "ea0fcfe3-a68f-408a-865c-5da3c31be22c",
     "memberships": [
       {
         "name": "creator",
@@ -282,10 +341,17 @@
     "hifi_gan_vocoder": "bertie-2-10-23-hifigan",
     "ml_model_id": 12158,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Angry",
+    "style": "Character",
+    "accent": "British",
+    "age": "Adult",
+    "description": "A pantomime, petulant character voice; sounds mildly upset and irritated",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/b3b396e9-b501-4178-8934-e2765b6a43b1/images/Bertie_png.webp"
   },
   {
-    "added_at": 1676004338,
+    "added_at": 1676004338.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -294,7 +360,6 @@
     "controls": false,
     "display_name": "General Herring",
     "is_active": true,
-    "model_id": "bc5cfdfa-86c5-4693-a37d-6ddac0beb0ff",
     "memberships": [
       {
         "name": "creator",
@@ -309,10 +374,17 @@
     "hifi_gan_vocoder": "herring-2-9-23-hifigan",
     "ml_model_id": 12155,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Female",
+    "mood": "Happy",
+    "style": "Character",
+    "accent": "British",
+    "age": "Adult",
+    "description": "Commanding, terse character voice, perhaps suitable for delivering a military briefing.",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/67fbff66-5cc8-4950-932e-4ec0547ee975/images/General_Herring_png.webp"
   },
   {
-    "added_at": 1675916342,
+    "added_at": 1675916342.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -321,7 +393,6 @@
     "controls": false,
     "display_name": "Jake Turner",
     "is_active": true,
-    "model_id": "27495f1e-c55b-423b-8132-f94bd07c9961",
     "memberships": [
       {
         "name": "creator",
@@ -336,10 +407,17 @@
     "hifi_gan_vocoder": "FrostyJohnHifigan",
     "ml_model_id": 12141,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Sad",
+    "style": "Character",
+    "accent": "British",
+    "age": "Adult",
+    "description": "A northern English character; forlorn, cynical and world-weary.",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/13c0b24a-abff-4c30-9729-7250844ef314/images/Jake_Turner_png.webp"
   },
   {
-    "added_at": 1675235044,
+    "added_at": 1675235044.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -348,7 +426,6 @@
     "controls": false,
     "display_name": "Bertie",
     "is_active": true,
-    "model_id": "14d9ac3c-6b9c-48cd-9a52-94a19c1ae57b",
     "memberships": [
       {
         "name": "creator",
@@ -363,10 +440,17 @@
     "hifi_gan_vocoder": "chipper-2-1-23-hifigan",
     "ml_model_id": 12007,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Happy",
+    "style": "Character",
+    "accent": "British",
+    "age": "Adult",
+    "description": "Chipper, animated",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/080e856b-6fcd-4010-bd3a-3bc0712037a3/images/Bertie_png.webp"
   },
   {
-    "added_at": 1675006542,
+    "added_at": 1675006542.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -375,7 +459,6 @@
     "controls": false,
     "display_name": "General Herring (Losing patience)",
     "is_active": true,
-    "model_id": "5f47a5ab-0983-4d62-ab70-0944e227ab39",
     "memberships": [
       {
         "name": "creator",
@@ -390,10 +473,17 @@
     "hifi_gan_vocoder": "general-herring-hifigan",
     "ml_model_id": 11957,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Female",
+    "mood": "Angry",
+    "style": "Character",
+    "accent": "British",
+    "age": "Adult",
+    "description": "Military, strict....",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/67fbff66-5cc8-4950-932e-4ec0547ee975/images/General_Herring_png.webp"
   },
   {
-    "added_at": 1674829741,
+    "added_at": 1674829741.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -402,7 +492,6 @@
     "controls": false,
     "display_name": "Jake Turner",
     "is_active": true,
-    "model_id": "4fa680ac-9a0f-418f-9300-306f72c43e6f",
     "memberships": [
       {
         "name": "creator",
@@ -417,10 +506,17 @@
     "hifi_gan_vocoder": "FrostyJohnHifigan",
     "ml_model_id": 11912,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Happy",
+    "style": "Character",
+    "accent": "British",
+    "age": "Adult",
+    "description": "Winter is on the way...",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/13c0b24a-abff-4c30-9729-7250844ef314/images/Jake_Turner_png.webp"
   },
   {
-    "added_at": 1673528849,
+    "added_at": 1673528849.0,
     "architecture": "tacotron2",
     "category": "Studio",
     "contributors": [
@@ -429,7 +525,6 @@
     "controls": false,
     "display_name": "Movie Trailer Guy",
     "is_active": true,
-    "model_id": "a4eac88e-8b98-4e3c-88ef-5f2dd1e2e77a",
     "memberships": [
       {
         "name": "creator",
@@ -444,10 +539,17 @@
     "hifi_gan_vocoder": "g_02590000_8spk",
     "ml_model_id": 11683,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Happy",
+    "style": "Announcer",
+    "accent": "USA",
+    "age": "Adult",
+    "description": "Trailer Guy",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/c584b439-cceb-43cc-851f-932f826eb4a9/images/Trailer_Guy_png.webp"
   },
   {
-    "added_at": 1665520391,
+    "added_at": 1665520391.0,
     "architecture": "tacotron2",
     "category": "Uberduck AI Creators",
     "contributors": [
@@ -456,7 +558,6 @@
     "controls": false,
     "display_name": "SJK",
     "is_active": true,
-    "model_id": "8d9b42a4-5235-44a5-bc6b-875a079887e4",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -466,7 +567,14 @@
     "hifi_gan_vocoder": "g_02590000_8spk",
     "ml_model_id": 10346,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Neutral",
+    "style": "Speaker",
+    "accent": "USA",
+    "age": "Adult",
+    "description": "",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/109cf329-a698-40ea-9f84-d4c66fdb9f68/images/sjk.webp"
   },
   {
     "added_at": null,
@@ -476,7 +584,6 @@
     "controls": false,
     "display_name": "Aiden Botha",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -486,7 +593,14 @@
     "hifi_gan_vocoder": "g_hifi_crust",
     "ml_model_id": 15160,
     "speaker_id": 16,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Happy",
+    "style": "Character",
+    "accent": "South African",
+    "age": "Adult",
+    "description": "A versatile, commanding yet upbeat character voice",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/9033ec36-5066-48a9-86a7-c9b0fc368496/images/Aiden_Botha_png.webp"
   },
   {
     "added_at": null,
@@ -496,7 +610,6 @@
     "controls": false,
     "display_name": "Preacher",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -506,7 +619,14 @@
     "hifi_gan_vocoder": "g_hifi_crust",
     "ml_model_id": 15160,
     "speaker_id": 18,
-    "language": "english"
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
   },
   {
     "added_at": null,
@@ -516,7 +636,6 @@
     "controls": false,
     "display_name": "Newsreader",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -526,7 +645,14 @@
     "hifi_gan_vocoder": "g_hifi_crust",
     "ml_model_id": 15160,
     "speaker_id": 22,
-    "language": "english"
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
   },
   {
     "added_at": null,
@@ -536,7 +662,6 @@
     "controls": false,
     "display_name": "Peppy Faire",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -546,7 +671,14 @@
     "hifi_gan_vocoder": "g_hifi_crust",
     "ml_model_id": 15160,
     "speaker_id": 24,
-    "language": "english"
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
   },
   {
     "added_at": null,
@@ -556,7 +688,6 @@
     "controls": false,
     "display_name": "Rupert",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -566,7 +697,94 @@
     "hifi_gan_vocoder": "g_hifi_crust",
     "ml_model_id": 15160,
     "speaker_id": 26,
-    "language": "english"
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
+  },
+  {
+    "added_at": null,
+    "architecture": "radtts",
+    "category": "",
+    "contributors": [],
+    "controls": false,
+    "display_name": "zwf",
+    "is_active": true,
+    "memberships": [],
+    "is_private": false,
+    "is_primary": true,
+    "name": "zwf-radtts",
+    "symbol_set": "nvidia_taco2",
+    "voicemodel_uuid": "4ec5c264-0a49-47c8-a3eb-c0d3518a65a1",
+    "hifi_gan_vocoder": "zwf-8-28-22-hifigan",
+    "ml_model_id": 15160,
+    "speaker_id": 33,
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
+  },
+  {
+    "added_at": null,
+    "architecture": "radtts",
+    "category": "",
+    "contributors": [],
+    "controls": false,
+    "display_name": "Quackmaster",
+    "is_active": true,
+    "memberships": [],
+    "is_private": false,
+    "is_primary": true,
+    "name": "quackmaster",
+    "symbol_set": "nvidia_taco2",
+    "voicemodel_uuid": "a07c7418-c584-45da-8e69-7e485a1d846b",
+    "hifi_gan_vocoder": "studio/g_02640000_talknet",
+    "ml_model_id": 15189,
+    "speaker_id": 0,
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "Adult",
+    "description": "",
+    "image_url": ""
+  },
+  {
+    "added_at": null,
+    "architecture": "bark",
+    "category": "",
+    "contributors": [
+      "BibbyBob"
+    ],
+    "controls": false,
+    "display_name": "Quackmaster",
+    "is_active": true,
+    "memberships": [],
+    "is_private": false,
+    "is_primary": true,
+    "name": "mangram-bark",
+    "symbol_set": "nvidia_taco2",
+    "voicemodel_uuid": "52db3d43-86b2-4c74-b0fc-b234b0ceec63",
+    "hifi_gan_vocoder": "\"\"",
+    "ml_model_id": 2,
+    "speaker_id": null,
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
   },
   {
     "added_at": null,
@@ -578,7 +796,6 @@
     "controls": true,
     "display_name": "B La B (with pace control)",
     "is_active": true,
-    "model_id": "a664d2d3-a6ac-4ac2-bb50-b1a5dd7ba8b5",
     "memberships": [
       {
         "name": "creator",
@@ -593,27 +810,42 @@
     "hifi_gan_vocoder": "g_blab44100_00320000",
     "ml_model_id": 2042,
     "speaker_id": 3,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Neutral",
+    "style": "Rapper",
+    "accent": "USA",
+    "age": "Adult",
+    "description": "",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/7f35edab-0b2c-4baf-aca3-fbcd24a31916/images/blab2.webp"
   },
   {
     "added_at": null,
-    "architecture": "radtts",
+    "architecture": "bark",
     "category": "",
-    "contributors": [],
+    "contributors": [
+      "BibbyBob"
+    ],
     "controls": false,
-    "display_name": "zwf",
+    "display_name": "Rapper",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
-    "name": "zwf-radtts",
+    "name": "rapper-bark-semantic-small",
     "symbol_set": "nvidia_taco2",
-    "voicemodel_uuid": "4ec5c264-0a49-47c8-a3eb-c0d3518a65a1",
-    "hifi_gan_vocoder": "zwf-8-28-22-hifigan",
-    "ml_model_id": 15160,
-    "speaker_id": 33,
-    "language": "english"
+    "voicemodel_uuid": "830646ff-7379-4209-bfdb-111c178fe39c",
+    "hifi_gan_vocoder": "\"\"",
+    "ml_model_id": 2,
+    "speaker_id": null,
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
   },
   {
     "added_at": null,
@@ -623,7 +855,6 @@
     "controls": false,
     "display_name": "ZWF (rapping)",
     "is_active": true,
-    "model_id": "b9556011-aa62-4a4b-b6ed-b0bfe5f009b6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -633,7 +864,14 @@
     "hifi_gan_vocoder": "studio/g_02640000_studio",
     "ml_model_id": 5720,
     "speaker_id": 4,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Serious",
+    "style": "Rapper",
+    "accent": "US",
+    "age": "Adult",
+    "description": "",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/5a41dfbb-d46e-473c-a5ad-7aac89e10c76/images/538610.jpeg"
   },
   {
     "added_at": null,
@@ -643,7 +881,6 @@
     "controls": false,
     "display_name": "Big G",
     "is_active": true,
-    "model_id": "b9556011-aa62-4a4b-b6ed-b0bfe5f009b6",
     "memberships": [
       {
         "name": "creator",
@@ -658,7 +895,14 @@
     "hifi_gan_vocoder": "studio/g_02640000_studio",
     "ml_model_id": 5720,
     "speaker_id": 1,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Neutral",
+    "style": "Rapper",
+    "accent": "USA",
+    "age": "Adult",
+    "description": "",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/1ed327ed-b69e-4219-bb5c-2b996bcc192b/images/bg-img.webp"
   },
   {
     "added_at": null,
@@ -668,7 +912,6 @@
     "controls": false,
     "display_name": "B La B",
     "is_active": true,
-    "model_id": "b9556011-aa62-4a4b-b6ed-b0bfe5f009b6",
     "memberships": [
       {
         "name": "creator",
@@ -683,7 +926,14 @@
     "hifi_gan_vocoder": "studio/g_02640000_studio",
     "ml_model_id": 5720,
     "speaker_id": 2,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Neutral",
+    "style": "Rapper",
+    "accent": "USA",
+    "age": "Adult",
+    "description": "",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/7f35edab-0b2c-4baf-aca3-fbcd24a31916/images/blab2.webp"
   },
   {
     "added_at": null,
@@ -693,7 +943,6 @@
     "controls": false,
     "display_name": "JSXI",
     "is_active": true,
-    "model_id": "b9556011-aa62-4a4b-b6ed-b0bfe5f009b6",
     "memberships": [
       {
         "name": "creator",
@@ -708,7 +957,14 @@
     "hifi_gan_vocoder": "studio/g_02640000_studio",
     "ml_model_id": 5720,
     "speaker_id": 3,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Neutral",
+    "style": "Rapper",
+    "accent": "USA",
+    "age": "Adult",
+    "description": "",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/2f9f6dd7-0f53-4cc0-a652-a53de654560e/images/jsxi.webp"
   },
   {
     "added_at": null,
@@ -718,7 +974,6 @@
     "controls": false,
     "display_name": "Relikk",
     "is_active": true,
-    "model_id": "b9556011-aa62-4a4b-b6ed-b0bfe5f009b6",
     "memberships": [
       {
         "name": "creator",
@@ -733,7 +988,14 @@
     "hifi_gan_vocoder": "studio/g_02640000_studio",
     "ml_model_id": 5720,
     "speaker_id": 5,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Neutral",
+    "style": "Rapper",
+    "accent": "USA",
+    "age": "Adult",
+    "description": "",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/d42b8a0a-bf24-45a5-b213-fdc7b54f458f/images/relikk.webp"
   },
   {
     "added_at": null,
@@ -743,7 +1005,6 @@
     "controls": false,
     "display_name": "T.A.G.",
     "is_active": true,
-    "model_id": "b9556011-aa62-4a4b-b6ed-b0bfe5f009b6",
     "memberships": [
       {
         "name": "creator",
@@ -758,7 +1019,14 @@
     "hifi_gan_vocoder": "studio/g_02640000_studio",
     "ml_model_id": 5720,
     "speaker_id": 6,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Neutral",
+    "style": "Rapper",
+    "accent": "USA",
+    "age": "Adult",
+    "description": "",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/240db79d-bcce-46fc-8129-321792ecfc35/images/tag.webp"
   },
   {
     "added_at": null,
@@ -770,7 +1038,6 @@
     "controls": false,
     "display_name": "ZWF",
     "is_active": true,
-    "model_id": "460a557e-a34f-4dbb-b084-079edbd353da",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -780,7 +1047,14 @@
     "hifi_gan_vocoder": "zwf-8-28-22-hifigan",
     "ml_model_id": 9661,
     "speaker_id": 0,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Neutral",
+    "style": "Speaker",
+    "accent": "USA",
+    "age": "Adult",
+    "description": "",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/99667c90-c918-4692-821f-8990b8ff2354/images/zwf.webp"
   },
   {
     "added_at": null,
@@ -792,7 +1066,6 @@
     "controls": false,
     "display_name": "Randy Hübner",
     "is_active": true,
-    "model_id": "6eafc831-eefd-46f8-8709-849a05da47c5",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -802,7 +1075,14 @@
     "hifi_gan_vocoder": "RandyHubner",
     "ml_model_id": 9895,
     "speaker_id": null,
-    "language": "dutch"
+    "language": "dutch",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
   },
   {
     "added_at": null,
@@ -812,7 +1092,6 @@
     "controls": false,
     "display_name": "rose-dreamy",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -822,7 +1101,14 @@
     "hifi_gan_vocoder": "rose-3-9-23-hifigan",
     "ml_model_id": 15160,
     "speaker_id": 5,
-    "language": "english"
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
   },
   {
     "added_at": null,
@@ -832,7 +1118,6 @@
     "controls": false,
     "display_name": "TM",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -842,7 +1127,14 @@
     "hifi_gan_vocoder": "g_hifi_crust",
     "ml_model_id": 15160,
     "speaker_id": 8,
-    "language": "english"
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
   },
   {
     "added_at": null,
@@ -852,7 +1144,6 @@
     "controls": false,
     "display_name": "Zeus",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -862,7 +1153,14 @@
     "hifi_gan_vocoder": "g_hifi_crust",
     "ml_model_id": 15160,
     "speaker_id": 9,
-    "language": "english"
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
   },
   {
     "added_at": null,
@@ -872,7 +1170,6 @@
     "controls": false,
     "display_name": "Fat Tony (Fed Up)",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -882,7 +1179,14 @@
     "hifi_gan_vocoder": "g_hifi_crust",
     "ml_model_id": 15160,
     "speaker_id": 10,
-    "language": "english"
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
   },
   {
     "added_at": null,
@@ -892,7 +1196,6 @@
     "controls": false,
     "display_name": "Fat Tony",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -902,7 +1205,14 @@
     "hifi_gan_vocoder": "g_hifi_crust",
     "ml_model_id": 15160,
     "speaker_id": 11,
-    "language": "english"
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
   },
   {
     "added_at": null,
@@ -912,7 +1222,6 @@
     "controls": false,
     "display_name": "general-herring-briefing",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -922,7 +1231,14 @@
     "hifi_gan_vocoder": "herring-2-9-23-hifigan",
     "ml_model_id": 15160,
     "speaker_id": 12,
-    "language": "english"
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
   },
   {
     "added_at": null,
@@ -932,7 +1248,6 @@
     "controls": false,
     "display_name": "Leroy",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -942,7 +1257,14 @@
     "hifi_gan_vocoder": "g_hifi_crust",
     "ml_model_id": 15160,
     "speaker_id": 13,
-    "language": "english"
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
   },
   {
     "added_at": null,
@@ -952,7 +1274,6 @@
     "controls": false,
     "display_name": "Yeehaw Macri",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -962,7 +1283,14 @@
     "hifi_gan_vocoder": "g_hifi_crust",
     "ml_model_id": 15160,
     "speaker_id": 14,
-    "language": "english"
+    "language": "english",
+    "gender": "",
+    "mood": "",
+    "style": "",
+    "accent": "",
+    "age": "",
+    "description": "",
+    "image_url": ""
   },
   {
     "added_at": null,
@@ -972,7 +1300,6 @@
     "controls": false,
     "display_name": "Aiden Botha (Stealth)",
     "is_active": true,
-    "model_id": "d3f2b35c-922c-4c99-8f3c-619a24fe90d6",
     "memberships": [],
     "is_private": false,
     "is_primary": true,
@@ -982,6 +1309,13 @@
     "hifi_gan_vocoder": "g_hifi_crust",
     "ml_model_id": 15160,
     "speaker_id": 15,
-    "language": "english"
+    "language": "english",
+    "gender": "Male",
+    "mood": "Neutral",
+    "style": "Character",
+    "accent": "South African",
+    "age": "Adult",
+    "description": "",
+    "image_url": "https://uberduck-images.s3.amazonaws.com/commercial/b01cf18d-0f10-46dd-adc6-562b599fdae4/images/Aiden_Botha_png.webp"
   }
 ]

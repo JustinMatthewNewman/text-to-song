@@ -14,10 +14,10 @@ import {
 } from "firebase/firestore";
 
 import { useSession } from "next-auth/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import useSWR from "swr";
-import voiceData from "./voices.json";
+import { Select, SelectItem, Textarea } from "@nextui-org/react";
 
 type Props = {
   chatId: string;
@@ -48,19 +48,29 @@ function ChatInput({ chatId }: Props) {
   const { data: session } = useSession();
   const [prompt, setPrompt] = useState("");
   const [loading, setIsLoading] = useState(true);
-  const [voices, setVoices] = useState([]);
+
+  const [voices, setVoices] = useState<Voice[]>([]);
+
+  useEffect(() => {
+    const options = {
+      method: "GET",
+      headers: {
+        Authorization:
+          "Bearer cHViX3J3c2Rva3R5bnJ3YXFvbHB1ejpwa19kZjJlYWUyNy0wNWFmLTQ2NDktOTQwNi05MTZlZDA3ZjhiODc=",
+      },
+    };
+
+    fetch("https://api.uberduck.ai/voices", options)
+      .then((response) => response.json())
+      .then((response) => setVoices(response))
+      .catch((err) => console.error(err));
+  }, []);
 
   const [selectedArtist, setSelectedArtist] = useState<Voice | null>(null);
 
   const { data: model } = useSWR("model", {
     fallbackData: "text-davinci-003",
   });
-
-  const findVoiceIndex = (voice: Voice) => {
-    return getVoices().findIndex(
-      (v) => v.voicemodel_uuid === voice.voicemodel_uuid
-    );
-  };
 
   const addAudioUrlToMessage = async (audioUrl: string) => {
     const messagesSnapshot = await getDocs(
@@ -92,28 +102,12 @@ function ChatInput({ chatId }: Props) {
     );
   };
 
-  const getVoices = () => {
-    return voiceData.sort((a, b) => {
-      if (a.display_name < b.display_name) {
-        return -1;
-      }
-      if (a.display_name > b.display_name) {
-        return 1;
-      }
-      return 0;
-    });
-  };
-
-  const handleVoiceSelection = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedIndex = parseInt(e.target.value);
-    setSelectedArtist(getVoices()[selectedIndex]);
-  };
-
   const generateResponse = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
       console.log(selectedArtist);
+      console.log(prompt);
       if ((!prompt && !session) || !selectedArtist) return;
       const input =
         "Write a song in the voice of " +
@@ -146,7 +140,9 @@ function ChatInput({ chatId }: Props) {
       );
 
       // loading
-      const notification = toast.loading("Generating lyrics...", {position: "bottom-right"});
+      const notification = toast.loading("Generating lyrics...", {
+        position: "bottom-right",
+      });
       await fetch("/api/askQuestion", {
         method: "POST",
         headers: {
@@ -177,54 +173,45 @@ function ChatInput({ chatId }: Props) {
     }
   };
 
-  // console.log(selectedArtist)
+  const handleVoiceSelection = (uuid: string) => {
+    const selectedVoice = voices.find(voice => {
+      return voice.voicemodel_uuid === uuid; 
+    });
+    if (!selectedVoice) {
+      return; 
+    }
+  
+    setSelectedArtist(selectedVoice);
+  }
 
   return (
-    <div style={{paddingTop: '90px'}} className="bg-gray-700/30 text-gray-400 text-sm ">
-      <div className="text-center text-white">
-        <br />
-        <label htmlFor="rapper-select">Write a song in the voice of: </label>
+    <div className="mt-24 text-gray-400 text-sm">
+      <div className="flex flex-col items-center justify-center min-w-md">
         <div className="p-2">
-          <div>
-            <select
-              style={{
-                backgroundColor: "#353942",
-                color: "#fff",
-                borderRadius: "4px",
-                padding: "4px",
-                width: "230px",
-              }}
-              value={selectedArtist ? findVoiceIndex(selectedArtist) : ""}
-              onChange={handleVoiceSelection}
-            >
-              <option value="" disabled>
-                Select
-              </option>
-              {getVoices().map((voice, index) => (
-                <option key={voice.voicemodel_uuid} value={index}>
-                  {voice.display_name}
-                </option>
-              ))}
-            </select>
-          </div>
+          <Select
+            items={voices}
+            label="Song voice:"
+            placeholder="Select a voice"
+            className="w-[80vw] md:w-[40vw] lg:w-[20vw]"
+            selectionMode="single"
+            onChange={(voice) => handleVoiceSelection(voice.target.value)}
+          >
+            {voices.map((voice) => (
+              <SelectItem key={voice.voicemodel_uuid} value={voice.voicemodel_uuid}>
+                {voice.name}
+              </SelectItem>
+            ))}
+          </Select>
         </div>
-        <br />
 
-        <label htmlFor="song-topic-input">Singing about: </label>
-        <input
+        <Textarea
+          label="Song about:"
+          className="w-[80vw] md:w-[40vw] lg:w-[20vw]"
           type="text"
           placeholder="Type here..."
-          value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           disabled={!session}
           autoComplete="off"
-          style={{
-            backgroundColor: "#353942",
-            color: "#fff",
-            borderRadius: "4px",
-            padding: "4px",
-            fontSize: '18px'
-          }}
         />
       </div>
 
@@ -253,9 +240,6 @@ function ChatInput({ chatId }: Props) {
           </button>
         )}
       </form>
-      {/* <div className="md:hidden">
-        <ModelSelection />
-      </div> */}
     </div>
   );
 }
