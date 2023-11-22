@@ -58,13 +58,18 @@ function ChatInput({ chatId }: Props) {
         Authorization:
           "Bearer cHViX3J3c2Rva3R5bnJ3YXFvbHB1ejpwa19kZjJlYWUyNy0wNWFmLTQ2NDktOTQwNi05MTZlZDA3ZjhiODc=",
       },
+      mode: 'no-cors' as RequestMode,
     };
-
+  
     fetch("https://api.uberduck.ai/voices", options)
       .then((response) => response.json())
-      .then((response) => setVoices(response))
+      .then((data) => {
+        // Note: With "no-cors" mode, you won't be able to access the response body or headers
+        console.log("Data:", data);
+      })
       .catch((err) => console.error(err));
   }, []);
+  
 
   const [selectedArtist, setSelectedArtist] = useState<Voice | null>(null);
 
