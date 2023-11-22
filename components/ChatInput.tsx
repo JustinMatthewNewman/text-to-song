@@ -51,21 +51,18 @@ function ChatInput({ chatId }: Props) {
 
   const [loadingVoices, setIsLoadingVoices] = useState(true);
 
-
   const [voices, setVoices] = useState<Voice[]>([]);
 
   useEffect(() => {
-
     fetch("/api/voices")
       .then((response) => response.json())
       .then((data) => {
         console.log("Data:", data);
-        setIsLoadingVoices(false)
-        setVoices(data)
+        setIsLoadingVoices(false);
+        setVoices(data);
       })
       .catch((err) => console.error(err));
   }, []);
-  
 
   const [selectedArtist, setSelectedArtist] = useState<Voice | null>(null);
 
@@ -175,83 +172,85 @@ function ChatInput({ chatId }: Props) {
   };
 
   const handleVoiceSelection = (uuid: string) => {
-    const selectedVoice = voices.find(voice => {
-      return voice.voicemodel_uuid === uuid; 
+    const selectedVoice = voices.find((voice) => {
+      return voice.voicemodel_uuid === uuid;
     });
     if (!selectedVoice) {
-      return; 
+      return;
     }
-  
+
     setSelectedArtist(selectedVoice);
-  }
+  };
 
   return (
-    <div style={{ position: "fixed", left: "50%", top: "120px", transform: "translate(-50%, -50%)", overflowY: 'hidden'}}  className="mt-24 text-gray-400 text-sm">
-              <Card>
-
-      {loadingVoices ? (
-        <p>Loading Voices</p>
-      ) : (
-        <div className="flex flex-col items-center justify-center min-w-md">
-        <div className="p-2">
-
-          <Select
-            items={voices}
-            label="Song voice:"
-            placeholder="Select a voice"
-            style={{fontSize: '18px'}}
-            className="w-[80vw] md:w-[40vw] lg:w-[20vw]"
-            selectionMode="single"
-            onChange={(voice) => handleVoiceSelection(voice.target.value)}
-            >
-            {voices.map((voice) => (
-              <SelectItem key={voice.voicemodel_uuid} value={voice.voicemodel_uuid}>
-                {voice.name}
-              </SelectItem>
-            ))}
-          </Select>
-        </div>
-
-        <Textarea
-        style={{fontSize: '18px'}}
-        label="Song about:"
-        className="w-[80vw] md:w-[40vw] lg:w-[20vw]"
-        type="text"
-        placeholder="Type here..."
-        onChange={(e) => setPrompt(e.target.value)}
-        disabled={!session}
-        autoComplete="off"
-        />
-      </div>
-          
-        )}
-
-      <form onSubmit={generateResponse} className="p-5 text-center">
-        <input
-          className={`bg-transparent focus:outline-none flex-1 disabled:cursor-not-allowed disabled:text-gray-700 ${
-            !loading && "animate-pulse"
-          }`}
-          />
-
-        {loading ? (
-          <button
-          type="submit"
-            disabled={!prompt || !session}
-            className="button text-white font-bold px-4 py-2 rounded disabled:bg-gray-700 disabled:cursor-not-allowed"
-            >
-            Create
-          </button>
+    <div
+      style={{
+        position: "fixed",
+        left: "50%",
+        top: "120px",
+        transform: "translate(-50%, -50%)",
+        overflowY: "hidden",
+      }}
+      className="mt-24 text-gray-400 text-sm"
+    >
+        {loadingVoices ? (
+          <p>Loading Voices</p>
         ) : (
-          <button
-          type="submit"
-          disabled={!session}
-          className="bg-[#434343] hover:opacity-50 text-white font-bold px-4 py-2 rounded disabled:bg-gray-700 disabled:cursor-not-allowed"
-          >
-            Create
-          </button>
+          <div className="flex flex-col items-center justify-center min-w-md">
+            <div className="p-2">
+              <Select
+                items={voices}
+                label="Song voice:"
+                placeholder="Select a voice"
+                style={{ fontSize: "18px" }}
+                className="w-[80vw] md:w-[40vw] lg:w-[20vw]"
+                selectionMode="single"
+                onChange={(voice) => handleVoiceSelection(voice.target.value)}
+              >
+                {voices.map((voice) => (
+                  <SelectItem
+                    key={voice.voicemodel_uuid}
+                    value={voice.voicemodel_uuid}
+                  >
+                    {voice.name}
+                  </SelectItem>
+                ))}
+              </Select>
+            </div>
+
+            <Textarea
+              style={{ fontSize: "18px" }}
+              label="Song about:"
+              className="w-[80vw] md:w-[40vw] lg:w-[20vw]"
+              type="text"
+              placeholder="Type here..."
+              onChange={(e) => setPrompt(e.target.value)}
+              disabled={!session}
+              autoComplete="off"
+            />
+          </div>
         )}
-      </form>
-      </Card>
+
+        <form onSubmit={generateResponse} className="p-5 text-center">
+
+          {loading ? (
+            <button
+              type="submit"
+              disabled={!prompt || !session}
+              className="button text-white font-bold px-4 py-2 rounded disabled:bg-gray-700 disabled:cursor-not-allowed"
+            >
+              Create
+            </button>
+          ) : (
+            <button
+              type="submit"
+              disabled={!session}
+              className="bg-[#434343] hover:opacity-50 text-white font-bold px-4 py-2 rounded disabled:bg-gray-700 disabled:cursor-not-allowed"
+            >
+              Create
+            </button>
+          )}
+        </form>
     </div>
   );
 }
