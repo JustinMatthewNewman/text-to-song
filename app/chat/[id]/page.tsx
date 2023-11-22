@@ -1,5 +1,6 @@
 "use client";
 
+import AI from "@/components/AI";
 import Chat from "@/components/Chat";
 import ChatInput from "@/components/ChatInput";
 import { Card, CardBody, CardHeader } from "@nextui-org/react";
@@ -21,12 +22,13 @@ function ChatPage({ params: { id } }: Props) {
       className="flex flex-col h-screen overflow-y-hidden items-center justify-center"
     >
       <Card className="max-w-[90vw]  md:max-w-[70vw] min-w-[70vw] m-2 mt-24">
-        <CardHeader className="flex justify-center items-center text-center">
+        {/* <CardHeader className="flex justify-center items-center text-center">
           <ChatInput chatId={id} />
         </CardHeader>
         <CardBody className="flex justify-center items-center text-center">
           <Chat chatId={id} />
-        </CardBody>
+        </CardBody> */}
+        <AI chatId={id}/>
       </Card>
     </motion.div>
   );
