@@ -17,7 +17,7 @@ import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import useSWR from "swr";
-import { Select, SelectItem, Textarea } from "@nextui-org/react";
+import { Card, Select, SelectItem, Textarea } from "@nextui-org/react";
 
 type Props = {
   chatId: string;
@@ -187,6 +187,8 @@ function ChatInput({ chatId }: Props) {
 
   return (
     <div style={{ position: "fixed", left: "50%", top: "120px", transform: "translate(-50%, -50%)" }}  className="mt-24 text-gray-400 text-sm">
+              <Card>
+
       {loadingVoices ? (
         <p>Loading Voices</p>
       ) : (
@@ -212,14 +214,14 @@ function ChatInput({ chatId }: Props) {
 
         <Textarea
         style={{fontSize: '18px'}}
-          label="Song about:"
-          className="w-[80vw] md:w-[40vw] lg:w-[20vw]"
-          type="text"
-          placeholder="Type here..."
-          onChange={(e) => setPrompt(e.target.value)}
-          disabled={!session}
-          autoComplete="off"
-          />
+        label="Song about:"
+        className="w-[80vw] md:w-[40vw] lg:w-[20vw]"
+        type="text"
+        placeholder="Type here..."
+        onChange={(e) => setPrompt(e.target.value)}
+        disabled={!session}
+        autoComplete="off"
+        />
       </div>
           
         )}
@@ -229,26 +231,27 @@ function ChatInput({ chatId }: Props) {
           className={`bg-transparent focus:outline-none flex-1 disabled:cursor-not-allowed disabled:text-gray-700 ${
             !loading && "animate-pulse"
           }`}
-        />
+          />
 
         {loading ? (
           <button
-            type="submit"
+          type="submit"
             disabled={!prompt || !session}
             className="button text-white font-bold px-4 py-2 rounded disabled:bg-gray-700 disabled:cursor-not-allowed"
-          >
+            >
             Create
           </button>
         ) : (
           <button
-            type="submit"
-            disabled={!session}
-            className="bg-[#434343] hover:opacity-50 text-white font-bold px-4 py-2 rounded disabled:bg-gray-700 disabled:cursor-not-allowed"
+          type="submit"
+          disabled={!session}
+          className="bg-[#434343] hover:opacity-50 text-white font-bold px-4 py-2 rounded disabled:bg-gray-700 disabled:cursor-not-allowed"
           >
             Create
           </button>
         )}
       </form>
+      </Card>
     </div>
   );
 }
