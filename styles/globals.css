@@ -3,6 +3,24 @@
 @tailwind utilities;
 
 
+
+/* Hide scrollbars */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  scrollbar-width: none;
+  overflow-x: hidden;
+
+}
+
+/* Optional: Add a custom track style */
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+
 .grad {
   height: 100%;
 margin: 0;
@@ -18,11 +36,11 @@ background-image: linear-gradient(135deg, #b43ecc, #4d91ff, #4aff95);
   }
 
   .chatRow {
-    @apply rounded-lg px-5 py-3 text-sm flex items-center justify-center space-x-2 hover:bg-gray-700/70 cursor-pointer text-gray-300 transition-all duration-200 ease-out;
+    @apply rounded-lg px-5 py-3 text-sm flex items-center justify-center space-x-2 hover:bg-gray-700/70 cursor-pointer transition-all duration-200 ease-out;
   }
 
   .chatRowNoHover {
-    @apply rounded-lg px-5 py-3 text-sm flex items-center justify-center space-x-2 text-gray-300;
+    @apply rounded-lg px-5 py-3 text-sm flex items-center justify-center space-x-2
   }
 }
 

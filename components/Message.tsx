@@ -15,7 +15,7 @@ const storage = getStorage();
 function Message({ message }: Props) {
   const [song1Url, setSong1Url] = useState("");
   const [song2Url, setSong2Url] = useState("");
-  const [randomInt, setRandomInt] = useState(Math.floor(Math.random() * 37) + 1);
+  const [randomInt, setRandomInt] = useState(Math.floor(Math.random() * 36) + 1);
   const audioRef1 = useRef<HTMLAudioElement>(null);
   const audioRef2 = useRef<HTMLAudioElement>(null);
 
