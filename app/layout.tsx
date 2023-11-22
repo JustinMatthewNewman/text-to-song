@@ -6,7 +6,6 @@ import { authOption } from "../pages/api/auth/[...nextauth]";
 import "../styles/globals.css";
 import MelodifyNavbar from "@/components/navbar/MelodifyNavbar";
 import Providers from "./providers";
-import Footer from "@/components/footer/Footer";
 
 export default async function RootLayout({
   children,
@@ -21,8 +20,7 @@ export default async function RootLayout({
       <body>
         <SessionProvider session={session}>
           <Providers>
-            <MelodifyNavbar />
-
+            <MelodifyNavbar/>
             {!session ? (
               <Login />
             ) : (
@@ -35,7 +33,6 @@ export default async function RootLayout({
                 </div>
               </div>
             )}
-            <Footer />
           </Providers>
         </SessionProvider>
       </body>

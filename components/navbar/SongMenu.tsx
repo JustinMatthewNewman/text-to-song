@@ -31,8 +31,8 @@ export default function SongMenu({}: Props) {
   );
 
   return (
-    <div className="mt-12 mb-12">
-      <Card className="w-[88vw] p-2">
+    <div className="mt-6 mb-12">
+      <Card className="w-[88vw]">
         {session && (
           <CardHeader className="justify-between">
             <div className="flex gap-5">
@@ -53,6 +53,7 @@ export default function SongMenu({}: Props) {
             </div>
           </CardHeader>
         )}
+        <Divider />
 
         <CardBody className="px-3 py-0 text-small text-default-400 max-h-[60vh]">
           {loading && (
@@ -72,9 +73,10 @@ export default function SongMenu({}: Props) {
           ))}
         </CardBody>
         <Divider />
-        <CardFooter>
+        <CardFooter className="flex-row justify-between">
           <NewChat session={session} />
           <Button
+            className="m-2"
             color="danger"
             radius="full"
             size="lg"

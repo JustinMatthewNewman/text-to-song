@@ -17,17 +17,8 @@ export default function AppsHero({ session }: Props) {
       <div className="items-center justify-center text-center">
       
         <AppsText />
-        {session ? (
+        {session && (
           <NewChat session={session} />
-        ) : (
-          <Button
-            onPress={() => signIn("google")}
-            radius="full"
-            className="bg-gradient-to-tr from-pink-500 to-blue-500 text-white shadow-lg m-12"
-            size="lg"
-          >
-            Login 
-          </Button>
         )}
       </div>
 

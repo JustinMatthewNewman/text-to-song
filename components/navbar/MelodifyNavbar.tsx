@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { FaHome } from "react-icons/fa";
 
 import {
   Navbar,
@@ -17,7 +18,7 @@ import ThemeSwitcher from "./ThemeSwitcher";
 
 import Link from "next/link";
 import SongMenu from "./SongMenu";
-import { useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 type Props = {};
 
 export default function MelodifyNavbar({}: Props) {
@@ -58,18 +59,41 @@ export default function MelodifyNavbar({}: Props) {
           </Link>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent justify="end">
 
+      <NavbarContent className="flex gap-4 md:hidden">
+        <NavbarBrand>
+          <Link color="foreground" href="/">
+          <Button
+              style={{ zIndex: 2, display: "flex" }}
+            >
+              <FaHome/>
+            </Button>
+          </Link>
+        </NavbarBrand>
+      </NavbarContent>
+
+      <NavbarContent justify="end">
         <NavbarItem>
           <ThemeSwitcher />
         </NavbarItem>
-        {session && (
+        {session ? (
           <NavbarItem>
             <Button
               style={{ zIndex: 2, display: "flex" }}
               onClick={() => setIsOpen(!isOpen)}
             >
               <NavbarMenuToggle style={{ pointerEvents: "none" }} />
+            </Button>
+          </NavbarItem>
+        ) : (
+          <NavbarItem>
+            <Button
+              onPress={() => signIn("google")}
+              radius="full"
+              className="bg-gradient-to-tr from-pink-500 to-blue-500 text-white shadow-lg m-2"
+              size="md"
+            >
+              Login
             </Button>
           </NavbarItem>
         )}

@@ -8,6 +8,7 @@ import MacDisplay from "./MacDisplay";
 import AppsHero2 from "./AppsHero2";
 import BackgroundImage from "@/components/background/BackgroundImage";
 import { Session } from "next-auth";
+import Footer from "../footer/Footer";
 
 type Props = {
     session: Session | null;
@@ -50,6 +51,7 @@ export default function HomePage({ session }: Props) {
           marginTop: 70,
         }}
       />
+      <Footer/>
     </div>
   );
 }

@@ -43,7 +43,7 @@ function NewChat({ session }: Props) {
       <Button
         onPress={createNewChat}
         radius="full"
-        className="bg-gradient-to-tr from-pink-500 to-blue-500 text-white shadow-lg m-12"
+        className="bg-gradient-to-tr from-pink-500 to-blue-500 text-white shadow-lg m-2"
         size="lg"
       >
         <svg
