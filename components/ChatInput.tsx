@@ -19,8 +19,6 @@ import { toast } from "react-hot-toast";
 import useSWR from "swr";
 import voiceData from "./voices.json";
 
-import ModelSelection from "./ModelSelection";
-
 type Props = {
   chatId: string;
 };
@@ -182,13 +180,8 @@ function ChatInput({ chatId }: Props) {
   // console.log(selectedArtist)
 
   return (
-    <div className="bg-gray-700/30 text-gray-400 text-sm">
-      <div className="mt-24 text-center text-white">
-        {/* <img
-        src="https://drive.google.com/uc?export=download&id=1fj7OO7X2uFYOI0zM5ZfjYB27vdI43qEr"
-        alt="logo"
-        className="mx-auto p-4 App-logo"
-      /> */}
+    <div className="bg-gray-700/30 text-gray-400 text-sm mt-20">
+      <div className="text-center text-white">
         <br />
         <label htmlFor="rapper-select">Write a song in the voice of: </label>
         <div className="p-2">

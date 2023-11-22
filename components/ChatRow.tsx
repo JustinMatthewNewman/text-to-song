@@ -5,9 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
-import { BsFillMusicPlayerFill
-} from "react-icons/bs";
-
+import { BsFillMusicPlayerFill } from "react-icons/bs";
 
 type Props = {
   id: string;
@@ -45,11 +43,10 @@ function ChatRow({ id, session }: Props) {
       href={`/chat/${id}`}
       className={`chatRow justify-center ${active && "bg-gray-700/50"} button`}
     >
-            <BsFillMusicPlayerFill className="h-8 w-8" />
+      <BsFillMusicPlayerFill className="h-8 w-8" />
 
-
-            <p className="flex-1 flex md:inline-flex truncate">
-                      {messages?.docs[messages?.docs.length - 1]?.data().text || "New iPod"}
+      <p className="flex-1 flex md:inline-flex truncate">
+        {messages?.docs[messages?.docs.length - 1]?.data().text || "New iPod"}
       </p>
       <svg
         xmlns="http://www.w3.org/2000/svg"

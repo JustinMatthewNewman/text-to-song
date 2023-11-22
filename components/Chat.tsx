@@ -26,7 +26,6 @@ function Chat({ chatId }: Props) {
         orderBy("createdAt", "asc")
       )
   );
-  //console.log("🚀 ~ file: Chat.tsx:27 ~ Chat ~ messages:", messages?.docs);
 
   useEffect(() => {
     messageEndRef.current?.scrollIntoView();
@@ -34,40 +33,10 @@ function Chat({ chatId }: Props) {
 
   return (
     <div className=" overflow-y-auto overflow-x-hidden">
-      {messages?.empty && (
-        <>
-          {/* <p className="mt-10 text-center text-white">
-            Type a prompt in below to get started
-          </p> */}
-          {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-10 h-10 mx-auto mt-5 text-white animate-bounce"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg> */}
-
-
-
-
-
-
-
-
-          
-        </>
-      )}
-     
-     {messages?.docs.map((message, index) => (
-  <Message key={index} message={message.data()} /> // Use data() method to access message data
-))}
+      {messages?.empty && <></>}
+      {messages?.docs.map((message, index) => (
+        <Message key={index} message={message.data()} />
+      ))}
 
       <div ref={messageEndRef} />
     </div>
