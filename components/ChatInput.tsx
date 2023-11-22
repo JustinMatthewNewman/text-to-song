@@ -180,7 +180,7 @@ function ChatInput({ chatId }: Props) {
   // console.log(selectedArtist)
 
   return (
-    <div className="bg-gray-700/30 text-gray-400 text-sm mt-20">
+    <div style={{paddingTop: '90px'}} className="bg-gray-700/30 text-gray-400 text-sm ">
       <div className="text-center text-white">
         <br />
         <label htmlFor="rapper-select">Write a song in the voice of: </label>
