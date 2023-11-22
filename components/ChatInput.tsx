@@ -49,24 +49,19 @@ function ChatInput({ chatId }: Props) {
   const [prompt, setPrompt] = useState("");
   const [loading, setIsLoading] = useState(true);
 
+  const [loadingVoices, setIsLoadingVoices] = useState(true);
+
+
   const [voices, setVoices] = useState<Voice[]>([]);
 
   useEffect(() => {
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        "content-type": "application/json",
-        Authorization:
-          "Bearer cHViX3J3c2Rva3R5bnJ3YXFvbHB1ejpwa19kZjJlYWUyNy0wNWFmLTQ2NDktOTQwNi05MTZlZDA3ZjhiODc=",
-      },
-    };
-  
-    fetch("https://api.uberduck.ai/voices", options)
+
+    fetch("/api/voices")
       .then((response) => response.json())
       .then((data) => {
-        // Note: With "no-cors" mode, you won't be able to access the response body or headers
         console.log("Data:", data);
+        setIsLoadingVoices(false)
+        setVoices(data)
       })
       .catch((err) => console.error(err));
   }, []);
@@ -192,8 +187,12 @@ function ChatInput({ chatId }: Props) {
 
   return (
     <div className="mt-24 text-gray-400 text-sm">
-      <div className="flex flex-col items-center justify-center min-w-md">
+      {loadingVoices ? (
+        <p>Loading Voices</p>
+      ) : (
+        <div className="flex flex-col items-center justify-center min-w-md">
         <div className="p-2">
+
           <Select
             items={voices}
             label="Song voice:"
@@ -201,7 +200,7 @@ function ChatInput({ chatId }: Props) {
             className="w-[80vw] md:w-[40vw] lg:w-[20vw]"
             selectionMode="single"
             onChange={(voice) => handleVoiceSelection(voice.target.value)}
-          >
+            >
             {voices.map((voice) => (
               <SelectItem key={voice.voicemodel_uuid} value={voice.voicemodel_uuid}>
                 {voice.name}
@@ -218,8 +217,10 @@ function ChatInput({ chatId }: Props) {
           onChange={(e) => setPrompt(e.target.value)}
           disabled={!session}
           autoComplete="off"
-        />
+          />
       </div>
+          
+        )}
 
       <form onSubmit={generateResponse} className="p-5 text-center">
         <input

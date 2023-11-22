@@ -6,6 +6,7 @@ const sdk = require('api')('@uberduck/v1.3#539819r5lhgink3x');
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const response = await sdk.get_voices_voices_get({mode: 'tts-basic', slim: 'false'});
+    console.log("G0t voices!")
     res.status(200).json(response.data);
   } catch (error) {
     console.error(error);
