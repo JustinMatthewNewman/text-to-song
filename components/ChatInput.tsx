@@ -186,7 +186,7 @@ function ChatInput({ chatId }: Props) {
   }
 
   return (
-    <div style={{ position: "fixed", left: "50%", top: "120px", transform: "translate(-50%, -50%)" }}  className="mt-24 text-gray-400 text-sm">
+    <div style={{ position: "fixed", left: "50%", top: "120px", transform: "translate(-50%, -50%)", overflowY: 'hidden'}}  className="mt-24 text-gray-400 text-sm">
               <Card>
 
       {loadingVoices ? (
