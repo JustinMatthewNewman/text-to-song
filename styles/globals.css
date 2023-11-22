@@ -6,22 +6,6 @@
 
 
 
-body {
-  overflow-x: hidden;
-  overscroll-behavior-x: none;
-}
-
-html {
-  overscroll-behavior-y: none; 
-}
-
-/* Disable zooming */
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
 
 
 /* Hide scrollbars */
