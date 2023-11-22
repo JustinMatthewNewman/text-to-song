@@ -223,6 +223,7 @@ function ChatInput({ chatId }: Props) {
             color: "#fff",
             borderRadius: "4px",
             padding: "4px",
+            fontSize: '18px'
           }}
         />
       </div>
