@@ -66,9 +66,8 @@ function Message({ message }: Props) {
       className={`py-5 ${isChatGPT} w-full bg-gray-700/10`}
     >
       <div className="flex space-x-5 px-4 md:px-10 max-w-2xl mx-auto">
-        <img src={message.user.avatar} alt="" className="h-8 w-8" />
         <div className="w-full">
-          <p className="pt-1 text-sm max-w-[95%]">{message.text}</p>
+          <p style={{fontWeight: isChatGPT ? '500' : '800'}} className="pt-1 max-w-[95%]">{message.text}</p>
 
           <div className="flex justify-center items-center py-5"></div>
 

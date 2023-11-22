@@ -2,7 +2,7 @@
 
 import Chat from "@/components/Chat";
 import ChatInput from "@/components/ChatInput";
-import { Card, CardBody, CardHeader, Divider } from "@nextui-org/react";
+import { Card, CardBody, CardHeader } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import React from "react";
 
@@ -24,7 +24,7 @@ function ChatPage({ params: { id } }: Props) {
         <CardHeader className="flex justify-center items-center text-center">
           <ChatInput chatId={id} />
         </CardHeader>
-        <CardBody>
+        <CardBody className="flex justify-center items-center text-center">
           <Chat chatId={id} />
         </CardBody>
       </Card>

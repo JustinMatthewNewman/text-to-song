@@ -17,7 +17,8 @@ import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import useSWR from "swr";
-import { Card, Select, SelectItem, Textarea } from "@nextui-org/react";
+import {  Button, Select, SelectItem, Textarea } from "@nextui-org/react";
+import {CircularProgress} from "@nextui-org/react";
 
 type Props = {
   chatId: string;
@@ -188,8 +189,11 @@ function ChatInput({ chatId }: Props) {
       className="mt-2 text-gray-400 text-sm"
     >
         {loadingVoices ? (
-          <p>Loading Voices</p>
+          <div className="flex items-center justify-center h-screen">
+            <CircularProgress size="lg" color='secondary' aria-label="Loading..." />
+          </div>
         ) : (
+          <div>
           <div className="flex flex-col items-center justify-center text-center">
             <div className="p-2">
               <Select
@@ -219,32 +223,24 @@ function ChatInput({ chatId }: Props) {
               type="text"
               placeholder="Type here..."
               onChange={(e) => setPrompt(e.target.value)}
-              disabled={!session}
+              isDisabled={!session}
               autoComplete="off"
             />
           </div>
-        )}
 
         <form onSubmit={generateResponse} className="p-5 text-center">
 
-          {loading ? (
-            <button
-              type="submit"
-              disabled={!prompt || !session}
-              className="button text-white font-bold px-4 py-2 rounded disabled:bg-gray-700 disabled:cursor-not-allowed"
-            >
+            <Button 
+            type="submit"
+            isDisabled={prompt.length===0 || selectedArtist===null || !session || !loading}
+            radius="full" className="bg-gradient-to-tr from-pink-500 to-purple-500 text-white shadow-lg">
               Create
-            </button>
-          ) : (
-            <button
-              type="submit"
-              disabled={!session}
-              className="bg-[#434343] hover:opacity-50 text-white font-bold px-4 py-2 rounded disabled:bg-gray-700 disabled:cursor-not-allowed"
-            >
-              Create
-            </button>
-          )}
+            </Button>
+          
         </form>
+        </div>
+                )}
+
     </div>
   );
 }
