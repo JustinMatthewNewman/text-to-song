@@ -186,7 +186,7 @@ function ChatInput({ chatId }: Props) {
   }
 
   return (
-    <div className="mt-24 text-gray-400 text-sm">
+    <div style={{ position: "fixed", left: "50%", top: "120px", transform: "translate(-50%, -50%)" }}  className="mt-24 text-gray-400 text-sm">
       {loadingVoices ? (
         <p>Loading Voices</p>
       ) : (
@@ -197,6 +197,7 @@ function ChatInput({ chatId }: Props) {
             items={voices}
             label="Song voice:"
             placeholder="Select a voice"
+            style={{fontSize: '18px'}}
             className="w-[80vw] md:w-[40vw] lg:w-[20vw]"
             selectionMode="single"
             onChange={(voice) => handleVoiceSelection(voice.target.value)}
@@ -210,6 +211,7 @@ function ChatInput({ chatId }: Props) {
         </div>
 
         <Textarea
+        style={{fontSize: '18px'}}
           label="Song about:"
           className="w-[80vw] md:w-[40vw] lg:w-[20vw]"
           type="text"
