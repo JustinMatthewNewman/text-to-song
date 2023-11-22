@@ -55,10 +55,11 @@ function ChatInput({ chatId }: Props) {
     const options = {
       method: "GET",
       headers: {
+        accept: "application/json",
+        "content-type": "application/json",
         Authorization:
           "Bearer cHViX3J3c2Rva3R5bnJ3YXFvbHB1ejpwa19kZjJlYWUyNy0wNWFmLTQ2NDktOTQwNi05MTZlZDA3ZjhiODc=",
       },
-      mode: 'no-cors' as RequestMode,
     };
   
     fetch("https://api.uberduck.ai/voices", options)
