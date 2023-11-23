@@ -17,8 +17,16 @@ import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import useSWR from "swr";
-import {  Button, Select, SelectItem, Textarea } from "@nextui-org/react";
-import {CircularProgress} from "@nextui-org/react";
+import {
+  Button,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Select,
+  SelectItem,
+  Textarea,
+} from "@nextui-org/react";
+import { CircularProgress } from "@nextui-org/react";
 
 type Props = {
   chatId: string;
@@ -184,16 +192,17 @@ function ChatInput({ chatId }: Props) {
   };
 
   return (
-    <div
-
-      className="mt-2 text-gray-400 text-sm"
-    >
-        {loadingVoices ? (
-          <div className="flex items-center justify-center h-screen">
-            <CircularProgress size="lg" color='secondary' aria-label="Loading..." />
-          </div>
-        ) : (
-          <div>
+    <div className="mt-2 text-gray-400 text-sm">
+      {loadingVoices ? (
+        <div className="flex items-center justify-center h-screen">
+          <CircularProgress
+            size="lg"
+            color="secondary"
+            aria-label="Loading..."
+          />
+        </div>
+      ) : (
+        <div>
           <div className="flex flex-col items-center justify-center text-center">
             <div className="p-2">
               <Select
@@ -228,19 +237,34 @@ function ChatInput({ chatId }: Props) {
             />
           </div>
 
-        <form onSubmit={generateResponse} className="p-5 text-center">
-
-            <Button 
-            type="submit"
-            isDisabled={prompt.length===0 || selectedArtist===null || !session || !loading}
-            radius="full" className="bg-gradient-to-tr from-pink-500 to-purple-500 text-white shadow-lg">
-              Create
-            </Button>
-          
-        </form>
+          <form 
+          //onSubmit={generateResponse} 
+          className="p-5 text-center">
+            <Popover placement="bottom">
+              <PopoverTrigger>
+                <Button
+                  type="submit"
+                  // isDisabled={prompt.length===0 || selectedArtist===null || !session || !loading}
+                  radius="full"
+                  className="bg-gradient-to-tr from-pink-500 to-purple-500 text-white shadow-lg"
+                >
+                  Create
+                </Button>
+              </PopoverTrigger>
+              <PopoverContent>
+                <div className="px-1 py-2">
+                  <div className="text-small font-bold">System Maintenance - 11/23/23</div>
+                  <div className="text-tiny">
+                    We're currently updating our
+                    system to provide you with a faster and better service.
+                    
+                  </div>
+                </div>
+              </PopoverContent>
+            </Popover>
+          </form>
         </div>
-                )}
-
+      )}
     </div>
   );
 }
