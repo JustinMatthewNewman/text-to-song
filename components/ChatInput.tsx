@@ -243,7 +243,7 @@ function ChatInput({ chatId }: Props) {
             <Popover placement="bottom">
               <PopoverTrigger>
                 <Button
-                  type="submit"
+                  //type="submit"
                   // isDisabled={prompt.length===0 || selectedArtist===null || !session || !loading}
                   radius="full"
                   className="bg-gradient-to-tr from-pink-500 to-purple-500 text-white shadow-lg"
