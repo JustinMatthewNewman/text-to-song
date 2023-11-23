@@ -255,7 +255,7 @@ function ChatInput({ chatId }: Props) {
                 <div className="px-1 py-2">
                   <div className="text-small font-bold">System Maintenance - 11/23/23</div>
                   <div className="text-tiny">
-                    We're currently updating our
+                    We&apos;re currently updating our
                     system to provide you with a faster and better service.
                     
                   </div>
