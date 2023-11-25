@@ -4,6 +4,7 @@ import SongInput from "./SongInput";
 import SongOutput from "./SongOutput";
 import { useChat } from "ai/react";
 import { CircularProgress } from "@nextui-org/react";
+import Chat from "./Chat";
 type Props = {
   chatId: string;
 };
@@ -22,7 +23,8 @@ const AI: React.FC<Props> = ({ chatId }: Props) => {
   return (
     <div className="mx-auto w-full h-screen max-w-lg p-24 flex flex-col justify-center items-center">
       
-      <SongOutput chatId={chatId} messages={messages} isLoading={false} />
+      {/* <SongOutput chatId={chatId} messages={messages} isLoading={false} /> */}
+      <Chat chatId={chatId} />
 
       {isLoading && <CircularProgress aria-label="Loading...2" />}
 

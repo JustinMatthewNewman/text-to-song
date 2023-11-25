@@ -8,8 +8,21 @@ import { CircularProgress } from "@nextui-org/react";
 
 import { uuid } from "uuidv4";
 import { ChatRequestOptions, CreateMessage } from "ai";
+import { archiveLyrics } from "@/firebase/archiveLyrics";
  
 
+import { firestore } from "@/firebase/firebase";
+import {
+  addDoc,
+  collection,
+  doc,
+  getDocs,
+  limit,
+  orderBy,
+  query,
+  updateDoc,
+  serverTimestamp,
+} from "firebase/firestore";
 
 /**
  * Types for the TTS API voices
@@ -143,6 +156,9 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
 
         console.log(audioUrl);
         setNewSongFlag(false);
+
+        // Pass the audioUrl to a function that adds it to the message
+        addAudioUrlToMessage(audioUrl);
         
       } catch (error: any) {
         console.error(error.message);
@@ -189,12 +205,50 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
       await append(userMessage);
       stop(); // Stop any ongoing requests if they exist
 
+      await archiveLyrics(userMessage)
+
       console.log('Creating new song!')
       setNewSongFlag(true);      
 
     } catch (error: any) {
       console.error(error.message);
     }
+  };
+
+
+
+
+/**
+ * store the audio url to the vocals
+ */
+  const addAudioUrlToMessage = async (audioUrl: string) => {
+    const messagesSnapshot = await getDocs(
+      query(
+        collection(
+          firestore,
+          `users/${session?.user?.uid!}/chats/${chatId}/messages`
+        ),
+        orderBy("createdAt", "desc"),
+        limit(1)
+      )
+    );
+
+    const lastMessage = messagesSnapshot.docs[0];
+    const messageId = lastMessage.id;
+    const messageData = lastMessage.data() as Message;
+
+    const updatedMessage: MessageWithAudio = {
+      ...messageData,
+      audioUrl: audioUrl,
+    };
+
+    await updateDoc(
+      doc(
+        firestore,
+        `users/${session?.user?.uid!}/chats/${chatId}/messages/${messageId}`
+      ),
+      { audioUrl: updatedMessage.audioUrl }
+    );
   };
 
 

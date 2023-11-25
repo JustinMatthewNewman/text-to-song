@@ -1,6 +1,8 @@
 import { DocumentData } from "firebase/firestore";
 import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
+import { firestore } from "@/firebase/firebase";
+
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { FiPlay, FiPause } from "react-icons/fi";
 
@@ -9,7 +11,6 @@ type Props = {
   message: DocumentData;
   audioUrl?: string;
 };
-
 const storage = getStorage();
 
 function Message({ message }: Props) {
@@ -19,7 +20,7 @@ function Message({ message }: Props) {
   const audioRef1 = useRef<HTMLAudioElement>(null);
   const audioRef2 = useRef<HTMLAudioElement>(null);
 
-  const isChatGPT = message.user.name === "ChatGPT";
+  const isChatGPT = message.user.name !== "user";
   const audioUrl = message.audioUrl;
 
   useEffect(() => {
@@ -35,13 +36,6 @@ function Message({ message }: Props) {
     fetchSongUrls();
   }, [randomInt]);
 
-  const handleLeftArrowClick = () => {
-    setRandomInt((randomInt - 1 + 5) % 5 + 1);
-  };
-
-  const handleRightArrowClick = () => {
-    setRandomInt((randomInt + 1) % 5 + 1);
-  };
 
   const handlePlay = () => {
     if (audioRef1.current && audioRef2.current) {

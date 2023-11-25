@@ -1,6 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { adminDb } from "@/firebase/firebaseAdmin";
-import query from "@/utils/queryApi";
 import admin from "firebase-admin";
 import type { NextApiRequest, NextApiResponse } from "next";
 
@@ -81,7 +80,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const { prompt, chatId, model, session, selectedArtist } = req.body;
+  const { prompt, chatId, session, selectedArtist } = req.body;
   console.log(req.body)
   if (!prompt) {
     res.status(400).json({ answer: "Please Provide a prompt" });
@@ -93,17 +92,14 @@ export default async function handler(
     return;
   }
 
-  // ChatGpt Query
-
-  const response = await query(prompt, chatId, model);
 
   const message: archivedLyric = {
-    text: response || "ChatGpt unable to answer that!",
+    text: prompt || "We had some trouble creating those lyrics, please try again!",
     createdAt: admin.firestore.Timestamp.now(),
     user: {
-      _id: "ChatGPT",
-      name: "ChatGPT",
-      email: "ChatGPT",
+      _id: "Melodify",
+      name: "Melodify",
+      email: "Melodify",
       avatar:
         "https://drive.google.com/uc?export=download&id=1OrdAuQD_iWnqLUv1yerPwkvqvgHyw-al",
     },
@@ -112,6 +108,8 @@ export default async function handler(
 
   const audioUrl = await sendTextToUberduck(message.text, selectedArtist);
   console.log(audioUrl);
+  console.log('\n')
+  console.log('users/'+session?.user?.uid+'/chats/'+chatId+'/messages')
   await adminDb
     .collection("users")
     .doc(session?.user?.uid)
