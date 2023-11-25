@@ -1,14 +1,14 @@
-// interface Message {
-//   text: string;
+interface archivedLyric {
+  text: string;
 
-//   createdAt: admin.firestore.Timestamp;
-//   user: {
-//     _id: string;
-//     name: string;
-//     email: string;
-//     avatar: string;
-//   };
-// }
+  createdAt: admin.firestore.Timestamp;
+  user: {
+    _id: string;
+    name: string;
+    email: string;
+    avatar: string;
+  };
+}
 
 interface MessageWithAudio extends Message {
   audioUrl?: string;

@@ -2,10 +2,14 @@
 
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
+
 import { Button, Select, SelectItem, Textarea } from "@nextui-org/react";
 import { CircularProgress } from "@nextui-org/react";
+
 import { uuid } from "uuidv4";
 import { ChatRequestOptions, CreateMessage } from "ai";
+ 
+
 
 /**
  * Types for the TTS API voices
@@ -31,6 +35,9 @@ type Voice = {
   language: string;
 };
 
+/**
+ * Types from OpenAI
+ */
 interface SongInputProps {
   messages: Message[];
   error: undefined | Error;
@@ -49,14 +56,35 @@ interface SongInputProps {
   stop: () => void;
 }
 
+
+/**
+ * 
+ * SongInput Functional Component
+ * 
+ * 
+ * 
+ */
 const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
   chatId,
   append,
+  isLoading,
+  messages,
   stop,
 }) => {
-  const { data: session } = useSession();
-  const [prompt, setPrompt] = useState("");
 
+  /**
+   * Session Data from next auth
+   */
+  const { data: session } = useSession();
+  
+  /**
+   * Engineered Prompt for OpenAI
+   */
+  const [prompt, setPrompt] = useState("");
+  
+  /**
+   * Fetched voices from Uberduck
+   */
   const [loadingVoices, setIsLoadingVoices] = useState(true);
   const [voices, setVoices] = useState<Voice[]>([]);
 
@@ -85,10 +113,56 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
     if (!selectedVoice) {
       return;
     }
-
     setSelectedArtist(selectedVoice);
   };
 
+  const [newSongFlag, setNewSongFlag] = useState(false);
+
+  const generateVocals = async () => {
+    if (!isLoading && newSongFlag) {
+      try {
+        console.log(messages[messages.length - 1].content);
+        const response = await fetch("/api/generateVocal", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            prompt: messages[messages.length - 1].content,
+            chatId,
+            session,
+            selectedArtist: selectedArtist,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to generate vocals");
+        }
+
+        const { answer, audioUrl } = await response.json();
+
+        console.log(audioUrl);
+        setNewSongFlag(false);
+        
+      } catch (error: any) {
+        console.error(error.message);
+      }
+    }
+  };
+
+  useEffect(() => {
+    console.log('isLoading state', isLoading);
+    console.log('newSongflag', newSongFlag);
+    if (!isLoading && newSongFlag) {
+      console.log('generate vocals initiated!')
+      generateVocals();
+    }
+  }, [isLoading, newSongFlag]);
+
+
+  /**
+   * Handles Open-AI stream response
+   */
   const generateResponse = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -111,14 +185,19 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
         id: uuid(),
       };
 
+      // starts the OpenAI-API-Stream
       await append(userMessage);
-
       stop(); // Stop any ongoing requests if they exist
+
+      console.log('Creating new song!')
+      setNewSongFlag(true);      
 
     } catch (error: any) {
       console.error(error.message);
     }
   };
+
+
 
  
   return (
@@ -191,3 +270,5 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
 };
 
 export default SongInput;
+
+

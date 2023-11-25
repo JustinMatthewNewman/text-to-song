@@ -5,26 +5,27 @@ import SongOutput from "./SongOutput";
 import { useChat } from "ai/react";
 import { CircularProgress } from "@nextui-org/react";
 type Props = {
-    chatId: string;
-  };
+  chatId: string;
+};
 const AI: React.FC<Props> = ({ chatId }: Props) => {
-  const {     messages,
+  const {
+    messages,
     append,
     input,
     setInput,
     handleInputChange,
     isLoading,
-    stop, } = useChat();
+    stop,
+  } = useChat();
 
-  console.log(messages);
-  console.log(input);
 
   return (
-    <main className="mx-auto w-full h-screen max-w-lg p-24 flex flex-col justify-center items-center">
-      <SongOutput chatId={chatId} messages={messages} />
-      {isLoading && (
-            <CircularProgress/>
-          )}
+    <div className="mx-auto w-full h-screen max-w-lg p-24 flex flex-col justify-center items-center">
+      
+      <SongOutput chatId={chatId} messages={messages} isLoading={false} />
+
+      {isLoading && <CircularProgress aria-label="Loading...2" />}
+
       <SongInput
         chatId={chatId}
         input={input}
@@ -32,9 +33,12 @@ const AI: React.FC<Props> = ({ chatId }: Props) => {
         setInput={setInput}
         append={append}
         isLoading={isLoading}
-        stop={stop} messages={[]} error={undefined}      
-        />
-    </main>
+        stop={stop}
+        messages={messages}
+        error={undefined}
+      />
+
+    </div>
   );
 };
 
