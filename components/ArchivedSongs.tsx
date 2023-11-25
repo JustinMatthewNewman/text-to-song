@@ -6,13 +6,9 @@ import { useSession } from "next-auth/react";
 import { useEffect, useRef } from "react";
 import { useCollection } from "react-firebase-hooks/firestore";
 
-import Message from "./Message";
+import Song from "./Song";
 
-type Props = {
-  chatId: string;
-};
-
-function Chat({ chatId }: Props) {
+const ArchivedSongs: React.FC<{ chatId: string }> = ({ chatId }) => {
   const { data: session } = useSession();
   const messageEndRef = useRef<null | HTMLDivElement>(null);
 
@@ -32,15 +28,14 @@ function Chat({ chatId }: Props) {
   }, [messages]);
 
   return (
-    <div className="overflow-y-auto overflow-x-hidden h-screen w-[80vw] md:w-[40vw] rounded-3xl">
+    <div className="overflow-y-auto overflow-x-hidden rounded-2xl max-h-[40vh] w-full">
       {messages?.empty && <></>}
       {messages?.docs.map((message, index) => (
-        <Message key={index} message={message.data()} />
+          <Song key={index} message={message.data()} />
       ))}
-
       <div ref={messageEndRef} />
     </div>
   );
-}
+};
 
-export default Chat;
+export default ArchivedSongs;

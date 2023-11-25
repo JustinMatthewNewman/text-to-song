@@ -1,7 +1,6 @@
 import { DocumentData } from "firebase/firestore";
 import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
-import { firestore } from "@/firebase/firebase";
 
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { FiPlay, FiPause } from "react-icons/fi";
@@ -13,14 +12,14 @@ type Props = {
 };
 const storage = getStorage();
 
-function Message({ message }: Props) {
+function Song({ message }: Props) {
   const [song1Url, setSong1Url] = useState("");
   const [song2Url, setSong2Url] = useState("");
   const [randomInt, setRandomInt] = useState(Math.floor(Math.random() * 36) + 1);
   const audioRef1 = useRef<HTMLAudioElement>(null);
   const audioRef2 = useRef<HTMLAudioElement>(null);
 
-  const isChatGPT = message.user.name !== "user";
+  const isLyrics = message.user.name !== "user";
   const audioUrl = message.audioUrl;
 
   useEffect(() => {
@@ -57,11 +56,11 @@ function Message({ message }: Props) {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className={`py-5 ${isChatGPT} w-full bg-gray-700/10`}
+      className={`py-5 ${isLyrics} w-full bg-gray-700/10`}
     >
       <div className="flex space-x-5 px-4 md:px-10 max-w-2xl mx-auto">
         <div className="w-full">
-          <p style={{fontWeight: isChatGPT ? '500' : '800'}} className="pt-1 max-w-[95%]">{message.text}</p>
+          <p style={{fontWeight: isLyrics ? '500' : '800'}} className="pt-1 max-w-[95%]">{message.text}</p>
 
           <div className="flex justify-center items-center py-5"></div>
 
@@ -102,4 +101,4 @@ function Message({ message }: Props) {
   );
 }
 
-export default Message;
+export default Song;

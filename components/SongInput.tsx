@@ -66,6 +66,8 @@ interface SongInputProps {
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
   isLoading: boolean;
+  obtainingVocal: boolean;
+  setObtainingVocal: React.Dispatch<React.SetStateAction<boolean>>;
   stop: () => void;
 }
 
@@ -82,6 +84,8 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
   append,
   isLoading,
   messages,
+  obtainingVocal,
+  setObtainingVocal,
   stop,
 }) => {
 
@@ -157,8 +161,10 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
         console.log(audioUrl);
         setNewSongFlag(false);
 
+
         // Pass the audioUrl to a function that adds it to the message
-        addAudioUrlToMessage(audioUrl);
+        await addAudioUrlToMessage(audioUrl);
+        setObtainingVocal(false)
         
       } catch (error: any) {
         console.error(error.message);
@@ -209,6 +215,7 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
 
       console.log('Creating new song!')
       setNewSongFlag(true);      
+      setObtainingVocal(true);
 
     } catch (error: any) {
       console.error(error.message);
@@ -236,7 +243,6 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
     const lastMessage = messagesSnapshot.docs[0];
     const messageId = lastMessage.id;
     const messageData = lastMessage.data() as Message;
-
     const updatedMessage: MessageWithAudio = {
       ...messageData,
       audioUrl: audioUrl,
@@ -252,10 +258,8 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
   };
 
 
-
- 
   return (
-    <div className="mt-2 text-gray-400 text-sm">
+    <div className="mt-2 text-gray-400 text-sm max-h-[40vh]">
       {loadingVoices ? (
         <div className="flex items-center justify-center h-screen">
           <CircularProgress
@@ -266,14 +270,13 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
         </div>
       ) : (
         <div>
-          <div className="flex flex-col items-center justify-center text-center">
+          <div className="flex-col items-center justify-center text-center">
             <div className="p-2">
               <Select
                 items={voices}
                 label="Song voice:"
                 placeholder="Select a voice"
                 style={{ fontSize: "18px" }}
-                className="w-[80vw] md:w-[40vw]"
                 selectionMode="single"
                 onChange={(voice) => handleVoiceSelection(voice.target.value)}
               >
@@ -291,7 +294,6 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
             <Textarea
               style={{ fontSize: "18px" }}
               label="Song about:"
-              className="w-[80vw] md:w-[40vw]"
               type="text"
               placeholder="Type here..."
               onChange={(e) => setPrompt(e.target.value)}

@@ -1,10 +1,16 @@
 // AI.tsx
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SongInput from "./SongInput";
-import SongOutput from "./SongOutput";
 import { useChat } from "ai/react";
-import { CircularProgress } from "@nextui-org/react";
-import Chat from "./Chat";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  CircularProgress,
+  Progress,
+} from "@nextui-org/react";
+import ArchivedSongs from "./ArchivedSongs";
+
 type Props = {
   chatId: string;
 };
@@ -19,27 +25,67 @@ const AI: React.FC<Props> = ({ chatId }: Props) => {
     stop,
   } = useChat();
 
+  const messageEndRef = useRef<null | HTMLDivElement>(null);
+  const [obtainingVocals, setObtainingVocals] = useState<boolean>(false);
+
+  useEffect(() => {
+    messageEndRef.current?.scrollIntoView({ behavior: "instant" });
+    // if (!isLoading) {
+    //   setObtainingVocals(true);
+    // }
+  }, [messages]);
 
   return (
-    <div className="mx-auto w-full h-screen max-w-lg p-24 flex flex-col justify-center items-center">
-      
-      {/* <SongOutput chatId={chatId} messages={messages} isLoading={false} /> */}
-      <Chat chatId={chatId} />
+    <div className="flex flex-col container justify-center items-center mt-20 p-4">
+      <Card className="min-w-[80vw] h-[80vh]">
+        <CardHeader className="overflow-y-auto items-center justify-center flex-col">
+          <ArchivedSongs chatId={chatId} />
 
-      {isLoading && <CircularProgress aria-label="Loading...2" />}
+          {isLoading && (
+            <div
+              className="overflow-y-auto h-[200px] p-4 mt-2 items-center justify-center"
+              style={{ maxHeight: "100px" }}
+            >
+              <div className="m-2 items-center justify-center">
+                {messages.map((m) => (
+                  <div key={m.id}>{m.role === "user" ? "" : m.content}</div>
+                ))}
+                <div ref={messageEndRef} />
+                <Progress
+                  size="sm"
+                  isIndeterminate
+                  aria-label="Loading...3"
+                />
+                <p className="ml-2">Generating Lyrics...</p>
 
-      <SongInput
-        chatId={chatId}
-        input={input}
-        handleInputChange={handleInputChange}
-        setInput={setInput}
-        append={append}
-        isLoading={isLoading}
-        stop={stop}
-        messages={messages}
-        error={undefined}
-      />
+              </div>
+            </div>
+          )}
+          {obtainingVocals && !isLoading && (
+            <div className="flex flex-row items-center mt-2">
+              <CircularProgress aria-label="Loading...2" />
+              <p className="ml-2">Lyrics obtained! Creating song...</p>
+            </div>
 
+          )}
+        </CardHeader>
+
+        <CardBody className="p-6">
+          <SongInput
+            chatId={chatId}
+            input={input}
+            handleInputChange={handleInputChange}
+            setInput={setInput}
+            append={append}
+            isLoading={isLoading}
+            stop={stop}
+            messages={messages}
+            error={undefined}
+            obtainingVocal={obtainingVocals}
+            setObtainingVocal={setObtainingVocals}
+          />
+        </CardBody>
+      </Card>
     </div>
   );
 };
