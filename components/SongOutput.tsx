@@ -1,30 +1,35 @@
 // SongOutput.tsx
-import { FunctionCall } from 'ai';
-import React from 'react';
-
+import { FunctionCall } from "ai";
+import React from "react";
 
 interface SongOutputProps {
-  messages: Array< {
+  messages: Array<{
     id: string;
     createdAt?: Date;
     content: string;
     ui?: string | JSX.Element | JSX.Element[] | null | undefined;
-    role: 'system' | 'user' | 'assistant' | 'function';
+    role: "system" | "user" | "assistant" | "function";
     name?: string;
     function_call?: string | FunctionCall;
-}>;
+  }>;
 }
 
-const SongOutput: React.FC<SongOutputProps & { chatId: string }> = ({ messages, chatId }) => {
-    return (
-    <section className="mb-auto m">
-      {messages.map((m) => (
-        <div className="mb-4" key={m.id}>
-          {m.role === 'user' ? 'User: ' : 'AI: '}
-          {m.content}
-        </div>
-      ))}
-    </section>
+const SongOutput: React.FC<SongOutputProps & { chatId: string }> = ({
+  messages,
+  chatId,
+}) => {
+  console.log(messages)
+  return (
+    <div className="overflow-y-auto overflow-x-hidden h-screen w-[80vw] md:w-[40vw] rounded-3xl">
+      <section className="mb-auto m flex flex-col items-center justify-center p-4">
+        {messages.map((m) => (
+          <div className="mb-4" key={m.id}>
+            {m.role === "user" ? "" : "MelodifyLabs: "}
+            {m.role === 'user' ? "": m.content}
+          </div>
+        ))}
+      </section>
+    </div>
   );
 };
 

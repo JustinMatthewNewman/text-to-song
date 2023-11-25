@@ -1,33 +1,14 @@
 "use client";
 
-import { firestore } from "@/firebase/firebase";
-import {
-  addDoc,
-  collection,
-  doc,
-  getDocs,
-  limit,
-  orderBy,
-  query,
-  updateDoc,
-  serverTimestamp,
-} from "firebase/firestore";
-
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
-import { toast } from "react-hot-toast";
 import { Button, Select, SelectItem, Textarea } from "@nextui-org/react";
 import { CircularProgress } from "@nextui-org/react";
-
-interface SongInputProps {
-  input: string;
-  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-}
-
+import { uuid } from "uuidv4";
+import { ChatRequestOptions, CreateMessage } from "ai";
 
 /**
- * Types for the TTS API voices 
+ * Types for the TTS API voices
  */
 type Voice = {
   added_at: number | null;
@@ -50,19 +31,31 @@ type Voice = {
   language: string;
 };
 
-
+interface SongInputProps {
+  messages: Message[];
+  error: undefined | Error;
+  append: (
+    message: Message | CreateMessage,
+    chatRequestOptions?: ChatRequestOptions
+  ) => Promise<string | null | undefined>;
+  input: string;
+  setInput: React.Dispatch<React.SetStateAction<string>>;
+  handleInputChange: (
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+  ) => void;
+  isLoading: boolean;
+  stop: () => void;
+}
 
 const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
-    input,
-    handleInputChange,
-    handleSubmit,
-    chatId,
-  }) => {
-
-
+  chatId,
+  append,
+  stop,
+}) => {
   const { data: session } = useSession();
   const [prompt, setPrompt] = useState("");
-  const [loading, setIsLoading] = useState(true);
 
   const [loadingVoices, setIsLoadingVoices] = useState(true);
   const [voices, setVoices] = useState<Voice[]>([]);
@@ -80,7 +73,6 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
       })
       .catch((err) => console.error(err));
   }, []);
-
 
   /**
    * Logic to handle the vioce selection
@@ -101,91 +93,35 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
     e.preventDefault();
 
     try {
-      console.log(selectedArtist);
-      console.log(prompt);
       if ((!prompt && !session) || !selectedArtist) return;
-      const input =
+
+      const inputContent =
         "Write a song in the voice of " +
-        selectedArtist.name +
+        selectedArtist?.name +
         " rapping about " +
         prompt.trim() +
         ".";
-      setPrompt("");
-      setIsLoading(false);
 
-      const message: Message = {
-        text: input,
-        createdAt: serverTimestamp(),
-        user: {
-          _id: session?.user.uid!,
-          name: session?.user.name!,
-          email: session?.user.email!,
-          avatar:
-            session?.user.image ||
-            `https://ui-avatars.com/api/?name=${session?.user.name!}`,
-        },
+      setPrompt("");
+
+      const userMessage: Message = {
+        createdAt: new Date(),
+        content: inputContent,
+        role: "user",
+        id: uuid(),
       };
 
-      await addDoc(
-        collection(
-          firestore,
-          `users/${session?.user?.uid!}/chats/${chatId}/messages`
-        ),
-        message
-      );
+      await append(userMessage);
 
-      handleSubmit(e)
+      stop(); // Stop any ongoing requests if they exist
 
     } catch (error: any) {
-      console.log(error.message);
+      console.error(error.message);
     }
   };
 
-  const addAudioUrlToMessage = async (audioUrl: string) => {
-    const messagesSnapshot = await getDocs(
-      query(
-        collection(
-          firestore,
-          `users/${session?.user?.uid!}/chats/${chatId}/messages`
-        ),
-        orderBy("createdAt", "desc"),
-        limit(1)
-      )
-    );
-
-    const lastMessage = messagesSnapshot.docs[0];
-    const messageId = lastMessage.id;
-    const messageData = lastMessage.data() as Message;
-
-    const updatedMessage: MessageWithAudio = {
-      ...messageData,
-      audioUrl: audioUrl,
-    };
-
-    await updateDoc(
-      doc(
-        firestore,
-        `users/${session?.user?.uid!}/chats/${chatId}/messages/${messageId}`
-      ),
-      { audioUrl: updatedMessage.audioUrl }
-    );
-  };
-
+ 
   return (
-    // <form className="flex space-x-4" onSubmit={handleSubmit}>
-    //   <input
-    //     className="rounded-md p-2 text-black"
-    //     value={input}
-    //     onChange={handleInputChange}
-    //     placeholder="Say something..."
-    //   />
-    //   <button
-    //     className="border-solid border-2 border-white p-2 rounded-md"
-    //     type="submit"
-    //   >
-    //     Send
-    //   </button>
-    // </form>
     <div className="mt-2 text-gray-400 text-sm">
       {loadingVoices ? (
         <div className="flex items-center justify-center h-screen">
@@ -229,22 +165,17 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
               isDisabled={!session}
               autoComplete="off"
             />
+
           </div>
 
-          <form onSubmit={handleSubmit} className="p-5 text-center">
-                  <input
-        className="rounded-md p-2 text-black"
-        value={input}
-        onChange={handleInputChange}
-        placeholder="Say something..."
-      />
+
+          <form onSubmit={generateResponse} className="p-5 text-center">
             <Button
               type="submit"
               isDisabled={
                 prompt.length === 0 ||
                 selectedArtist === null ||
-                !session ||
-                !loading
+                !session
               }
               radius="full"
               className="bg-gradient-to-tr from-pink-500 to-purple-500 text-white shadow-lg"
@@ -252,6 +183,7 @@ const SongInput: React.FC<SongInputProps & { chatId: string }> = ({
               Create
             </Button>
           </form>
+
         </div>
       )}
     </div>
