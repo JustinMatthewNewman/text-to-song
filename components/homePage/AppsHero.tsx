@@ -1,7 +1,7 @@
 import React from "react";
 import AppsText from "./AppsText";
 import AppDisplay from "./AppDisplay";
-import NewChat from "../NewChat";
+import NewChat from "../NewThread";
 import { Session } from "next-auth";
 import { signIn } from "next-auth/react";
 import { Button } from "@nextui-org/button";

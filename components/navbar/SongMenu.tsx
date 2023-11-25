@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 import { signOut, useSession } from "next-auth/react";
 import { useCollection } from "react-firebase-hooks/firestore";
 
-import ChatRow from "../ChatRow";
-import NewChat from "../NewChat";
+import Songs from "../DynamicSongMenu";
+import NewChat from "../NewThread";
 import { Button } from "@nextui-org/button";
 import {
   Card,
@@ -68,7 +68,7 @@ export default function SongMenu({}: Props) {
               viewport={{ once: true }}
               key={chat.id}
             >
-              <ChatRow id={chat.id} session={session} />
+              <Songs id={chat.id} session={session} />
             </motion.div>
           ))}
         </CardBody>

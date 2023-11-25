@@ -14,7 +14,7 @@ type Props = {
   session: Session | null;
 };
 
-function NewChat({ session }: Props) {
+function NewThread({ session }: Props) {
   const router = useRouter();
 
   const createNewChat = async () => {
@@ -64,4 +64,4 @@ function NewChat({ session }: Props) {
   );
 }
 
-export default NewChat;
+export default NewThread;

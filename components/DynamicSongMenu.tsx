@@ -12,7 +12,7 @@ type Props = {
   session: Session | null;
 };
 
-function ChatRow({ id, session }: Props) {
+function DynamicSongMenu({ id, session }: Props) {
   const pathname = usePathname();
   const router = useRouter();
   const [active, setActive] = useState(false);
@@ -67,4 +67,4 @@ function ChatRow({ id, session }: Props) {
   );
 }
 
-export default ChatRow;
+export default DynamicSongMenu;
